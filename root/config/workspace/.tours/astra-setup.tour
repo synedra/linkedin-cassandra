@@ -1,0 +1,206 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Astra Setup",
+  "steps": [
+    {
+      "title": "Authentication",
+      "description": "## Authentication\n\n>> npx create-react-app astra-tik-tok; cd astra-tik-tok\n\n>> astra-setup workshops tiktok\n\n[Visit Astra](https://astra.datastax.com) and follow the instructions in the console to get your token for the astra-setup step.\n\n"
+    },
+    {
+      "title": "Setup Git",
+      "description": ">> git init\n\n>> git config --global user.email TikTok@example.com\n\n>> git config --global user.name 'Tik Tok'\n\n>> git add -A\n\n>> git commit -a -m 'Initial commit'\n\n>> git rm -rf yarn.lock src/App.test.js src/reportWebVitals.js src/setupTests.js\n"
+    },
+    {
+      "title": "index.js description",
+      "description": "index.js - This file is where everything starts.  At it's simplest, it will look at the App component, and generate it into the indicated place in index.html, holding the 'root div specified as document.getElementById('root')."
+    },
+    {
+      "title": "Update index.js",
+      "file": "astra-tik-tok/src/index.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 18,
+          "character": 1
+        }
+      },
+      "description": "Replace index.js contents with simplified version.\n\n```jsx\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.css';\nimport App from './App';\n\n\nReactDOM.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMod>,\n  document.getElementById('root')\n);\n```"
+    },
+    {
+      "title": "App.js description",
+      "description": "App.js - this file defines your component, and is used by index.js to generate content which it passes along to index.html for rendering."
+    },
+    {
+      "file": "astra-tik-tok/src/App.js",
+      "title": "Comment out logo import",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 1,
+          "character": 30
+        }
+      },
+      "description": "Comment out logo import\n```\n// import logo from './logo.svg'\n```"
+    },
+    {
+      "file": "astra-tik-tok/src/App.js",
+      "title": "Comment out the logo line",
+      "line": 8,
+      "description": "Comment out the logo line by clicking \"Insert code\" below.\n\n```jsx\n//         <img src={logo} className=\"App-logo\" alt=\"logo\" />\n```\n\n[Save file](command:workbench.actions.files.save)",
+      "selection": {
+        "start": {
+          "line": 8,
+          "character": 1
+        },
+        "end": {
+          "line": 8,
+          "character": 59
+        }
+      }
+    },
+    {
+      "file": "astra-tik-tok/src/App.js",
+      "title": "Update App.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 8,
+          "character": 19
+        }
+      },
+      "description": "Replace App.js content with the minimal component information.\n\n```jsx\nimport './App.css'\nconst App = () => {\n  return (\n    <div className=\"App\">\n    </div>\n  );\n}\nexport default App\n```\n\n[Save file](command:workbench.actions.file.save)",
+      "line": 8
+    },
+    {
+      "title": "Start the server",
+      "description": ">> yarn start"
+    },
+    {
+      "title": "Install react-router-dom",
+      "commands": [
+        "workbench.action.terminal.newWithCwd?['cwd':'/config/workspace/astra-tik-tok']"
+      ],
+      "description": "Install the react-router-dom package\n\n>> yarn add react-router-dom"
+    },
+    {
+      "file": "astra-tik-tok/src/App.js",
+      "title": "Add react-router-dom to App.js",
+      "line": 1,
+      "description": "Add the import statement for react-router-dom at the top of App.js\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\n\n```"
+    },
+    {
+      "title": "Create the directory for the pages components",
+      "description": "Create the directory for the pages components.\n\n>> mkdir -p src/pages; touch src/pages/Home.js; touch src/pages/Upload.js\n"
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Home.js",
+      "title": "Create Home.js",
+      "line": 8,
+      "description": "Replace Home.js content with the minimal component information.\n\n```jsx\nimport '../App.css'\nconst Home = () => {\n  return (\n    <div className=\"Home\">\n    </div>\n  );\n}\nexport default Home\n```"
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Upload.js",
+      "title": "Create Upload.js",
+      "line": 1,
+      "description": "Replace Upload.js content with the minimal component information.\n\n```jsx\nimport '../App.css'\nconst Home = () => {\n  return (\n    <div className=\"Home\">\n    </div>\n  );\n}\nexport default Home\n```"
+    },
+    {
+      "file": "astra-tik-tok/src/App.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 9,
+          "character": 19
+        }
+      },
+      "title": "Add routing magic to App.js",
+      "description": "## Add structure to App.js\n\nIt's time to get App.js ready to do some real work.\n\nYou'll be making a few changes with this:\n* Importing the HashRouter, Route and Switch components\n* Adding a <Hashrouter> at the top of your App component\n* In the <Hashrouter>, inserting a Switch component to direct queries to the right place\n* Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match \"wins\" so you can land in some frustration if you don't keep this in mind.\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\nimport Home from './pages/Home'\nimport Upload from './pages/Upload'\nimport './App.css'\n\nconst App = () => {\n  return (\n    <HashRouter>\n    <Switch>\n      <Route path= \"/upload\" component={Upload}/>\n      <Route path= \"/\" component={Home}/>\n    </Switch>\n  </HashRouter>\n  );\n}\n\nexport default App\n```",
+      "line": null
+    },
+    {
+      "title": "Adding content to components",
+      "description": "# ⚒️ Adding some Content to the Components\n\nIn this step you will work with React Components to understand how they work, returning HTML via the render() function.  Header and FollowersColumn React Components will be created to use in our app.\n**Objectives**\n1. A Header that is going to be consistent for the upload page and the home page\n2. A FollowersColumn column where we can see people that we are currently following\n3. A feed and a little box of suggested accounts"
+    },
+    {
+      "title": "Create components directory",
+      "description": "Create the directory for the application components.\n\n>> mkdir src/components; touch src/components/Header.js; touch src/components/FollowersColumn.js"
+    },
+    {
+      "title": "Create Header file",
+      "description": "Replace Home.js content with the minimal component information.\n\n```jsx\nconst Header = () => {\n    return (\n      &lt;div className=\"header\"&gt;\n          &lt;h1>Header&lt;/h1&gt;\n      &lt;/div&gt;\n    );\n  }\n  \nexport default Header\n```"
+    },
+    {
+      "title": "Create FollowersColumn file",
+      "description": "Replace FollowersColumn.js content with the minimal component information.\n\n```jsx\nconst FollowersColumn = () => {\n    return (\n      &lt;div className=\"followers-column\"&gt;\n          &lt;h1>FollowersColumn&lt;/h1&gt;\n      &lt;/div&gt;\n    );\n  }\n  \nexport default FollowersColumn\n```"
+    },
+    {
+      "title": "Add Header to App.js",
+      "file": "astra-tik-tok/src/App.js",
+      "description": "# Import header into App.js\n\n```jsx\nimport Header from './components/Header'\n```\n",
+      "line": 5
+    },
+    {
+      "title": "Add a Header to the App component, under the <HashRouter> tag.",
+      "file": "astra-tik-tok/src/App.js",
+      "description": "# Add header to the HashRouter component\n\n```jsx\n<HashRouter>\n   <Header />\n```\n",
+      "selection": {
+        "start": {
+          "line": 7,
+          "character": 5
+        },
+        "end": {
+          "line": 7,
+          "character": 17
+        }
+      }
+    },
+    {
+      "title": "Style your components",
+      "description": "You need to make your new components pretty.\n* Add the flex styling to the container\n* Make the feed white\n* Make the suggested-box blue. \n* Set the background-color to yellow in the header class\n* Set css attributes for the .followers-column class\n\n```jsx\n.App {\n  text-align: center;\n}\n\n.header {\n  background-color: yellow;\n}\n\n.followers-column {\n  background-color: red;\n  width: 500px;\n  height: 800px;\n}\n\n.container {\n  display: flex;\n  flex-direction: row;\n}\n\n.feed {\n  background-color: white;\n  width: 500px;\n}\n\n.suggested-box {\n  background-color: blue;\n  width: 400px;\n  height: 400px;\n}\n```",
+      "file": "astra-tik-tok/src/App.css",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 39,
+          "character": 1
+        }
+      }
+    },
+    {
+      "title": "Introduction to Netlify",
+      "description": "# ⚒️ Getting Started with Astra/Stargate and Netlify\n\nIn this step you will work with React Components to understand how they work, returning HTML via the render() function.  Header and FollowersColumn React Components will be created to use in our app.\n\n**Objectives**\n1. Brief introduction to Netlify\n2. Install modules\n3. Set up your netlify app with netlify-cli\n4. Add netlify serverless functions"
+    },
+    {
+      "title": "Brief introduction to Netlify",
+      "description": "---\n\n## Step 1. Brief introduction to Netlify\n\nNow it is time to start getting post data into the Cassandra database. To get data in, you are going to create a serverless function. For this, you are going to use Netlify and Netlify functions. This means that it is not necessary to write a server, everything can be done with Netlify functions. Netlify deploys the functions you write as full API endpoints and will even run them automatically in response to events. If you haven't heard of Netlify functions before, this is a good place to start.  If you want to read more about Netlify, visit the [Getting Started documentation](https://docs.netlify.com/cli/get-started/)."
+    },
+    {
+      "title": "Install packages",
+      "description": "You need a few more packages to make your application work correctly.\n\nnetlify-cli allows you to interact with the Netlify system\n>> npm install netlify-cli --save-dev\n\naxios and @astrajs/collections are needed for cloud functioning\n\n>> npm install axios @astrajs/collections"
+    },
+    {
+      "title": "Setup github repository",
+      "description": "[Open Github](command:vscode.open?[\"https://github.com\"]). If you do not have a GitHub account, create one now.  \n\nClick the \"New\" button in the left bar to create a new repository.\n\n![image](https://user-images.githubusercontent.com/77410784/131268582-001e3aa5-f7ba-4246-86d7-1197de9bf484.png)\n\nName the new repository 'tiktok-clone' as shown in the image. Don't worry about the following setup steps.  Click \"Create Repository.\"\n\nMake sure your local repository is up-to-date:\n\n>> git commit -a -m \"Ready to deploy\"\n\nAdd the github repository as your origin.\n\n>> git remote add origin https://github.com/synedra/tiktok-clone.git\n\nRename the master branch to \"main\"\n\n>> git branch -M main\n\nPush your repository up to github.\n\n>> git push -u origin main\n\n"
+    },
+    {
+      "title": "Create Netlify Site",
+      "description": "# Create Netlify Site\n\nIn this step, you'll create a new Netlify site based on your github repository.\n\nFirst, [visit Netlify](https://www.netlify.com) and create a new account or login.\n\nNext, select \"New Site from Git\", and follow the prompts to find and select your new repository on Github.\n\nOnce you've done this, you can connect your workspace to the Netlify site.  First, connect your account to Netlify:\n\n>> netlify login\n\nNext, link the site you created with your Netlify site.  The first choice (same repository as Netlify) will work correctly\n\n>> netlify link\n\nAnd then you will take your environment variables and send them to Netlify so your site can be hosted.\n\n>> netlify env:import .env"
+    }
+  ],
+  "isPrimary": true
+}
