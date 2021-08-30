@@ -27,42 +27,11 @@
           "character": 1
         }
       },
-      "description": "Replace index.js contents with simplified version.\n\n```jsx\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.css';\nimport App from './App';\n\n\nReactDOM.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMod>,\n  document.getElementById('root')\n);\n```"
+      "description": "Replace index.js contents with simplified version.\n\n```jsx\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.css';\nimport App from './App';\n\n\nReactDOM.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>,\n  document.getElementById('root')\n);\n```"
     },
     {
       "title": "App.js description",
       "description": "App.js - this file defines your component, and is used by index.js to generate content which it passes along to index.html for rendering."
-    },
-    {
-      "file": "astra-tik-tok/src/App.js",
-      "title": "Comment out logo import",
-      "selection": {
-        "start": {
-          "line": 1,
-          "character": 1
-        },
-        "end": {
-          "line": 1,
-          "character": 30
-        }
-      },
-      "description": "Comment out logo import\n```\n// import logo from './logo.svg'\n```"
-    },
-    {
-      "file": "astra-tik-tok/src/App.js",
-      "title": "Comment out the logo line",
-      "line": 8,
-      "description": "Comment out the logo line by clicking \"Insert code\" below.\n\n```jsx\n//         <img src={logo} className=\"App-logo\" alt=\"logo\" />\n```\n\n[Save file](command:workbench.actions.files.save)",
-      "selection": {
-        "start": {
-          "line": 8,
-          "character": 1
-        },
-        "end": {
-          "line": 8,
-          "character": 59
-        }
-      }
     },
     {
       "file": "astra-tik-tok/src/App.js",
@@ -78,7 +47,7 @@
         }
       },
       "description": "Replace App.js content with the minimal component information.\n\n```jsx\nimport './App.css'\nconst App = () => {\n  return (\n    <div className=\"App\">\n    </div>\n  );\n}\nexport default App\n```\n\n[Save file](command:workbench.actions.file.save)",
-      "line": 8
+      "line": 22
     },
     {
       "title": "Start the server",
@@ -89,12 +58,12 @@
       "commands": [
         "workbench.action.terminal.newWithCwd?['cwd':'/config/workspace/astra-tik-tok']"
       ],
-      "description": "Install the react-router-dom package\n\n>> yarn add react-router-dom"
+      "description": "Stop the running process with Ctrl-C\n\nInstall the react-router-dom package\n\n>> yarn add react-router-dom"
     },
     {
       "file": "astra-tik-tok/src/App.js",
       "title": "Add react-router-dom to App.js",
-      "line": 1,
+      "line": 2,
       "description": "Add the import statement for react-router-dom at the top of App.js\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\n\n```"
     },
     {
@@ -104,14 +73,14 @@
     {
       "file": "astra-tik-tok/src/pages/Home.js",
       "title": "Create Home.js",
-      "line": 8,
+      "line": 15,
       "description": "Replace Home.js content with the minimal component information.\n\n```jsx\nimport '../App.css'\nconst Home = () => {\n  return (\n    <div className=\"Home\">\n    </div>\n  );\n}\nexport default Home\n```"
     },
     {
       "file": "astra-tik-tok/src/pages/Upload.js",
       "title": "Create Upload.js",
-      "line": 1,
-      "description": "Replace Upload.js content with the minimal component information.\n\n```jsx\nimport '../App.css'\nconst Home = () => {\n  return (\n    <div className=\"Home\">\n    </div>\n  );\n}\nexport default Home\n```"
+      "line": 8,
+      "description": "Replace Upload.js content with the minimal component information.\n\n```jsx\nimport '../App.css'\nconst Home = () => {\n  return (\n    <div className=\"Home\">\n    </div>\n  );\n}\nexport default Upload\n```"
     },
     {
       "file": "astra-tik-tok/src/App.js",
@@ -127,7 +96,7 @@
       },
       "title": "Add routing magic to App.js",
       "description": "## Add structure to App.js\n\nIt's time to get App.js ready to do some real work.\n\nYou'll be making a few changes with this:\n* Importing the HashRouter, Route and Switch components\n* Adding a <Hashrouter> at the top of your App component\n* In the <Hashrouter>, inserting a Switch component to direct queries to the right place\n* Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match \"wins\" so you can land in some frustration if you don't keep this in mind.\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\nimport Home from './pages/Home'\nimport Upload from './pages/Upload'\nimport './App.css'\n\nconst App = () => {\n  return (\n    <HashRouter>\n    <Switch>\n      <Route path= \"/upload\" component={Upload}/>\n      <Route path= \"/\" component={Home}/>\n    </Switch>\n  </HashRouter>\n  );\n}\n\nexport default App\n```",
-      "line": null
+      "line": 16
     },
     {
       "title": "Adding content to components",
@@ -139,11 +108,15 @@
     },
     {
       "title": "Create Header file",
-      "description": "Replace Home.js content with the minimal component information.\n\n```jsx\nconst Header = () => {\n    return (\n      &lt;div className=\"header\"&gt;\n          &lt;h1>Header&lt;/h1&gt;\n      &lt;/div&gt;\n    );\n  }\n  \nexport default Header\n```"
+      "file": "astra-tik-tok/src/components/Header.js",
+      "line": 9,
+      "description": "Replace Home.js content with the minimal component information.\n\n```jsx\nconst Header = () => {\n    return (\n      <div className=\"header\">\n          <h1>Header</h1>\n      </div>\n    );\n  }\n  \nexport default Header\n```"
     },
     {
       "title": "Create FollowersColumn file",
-      "description": "Replace FollowersColumn.js content with the minimal component information.\n\n```jsx\nconst FollowersColumn = () => {\n    return (\n      &lt;div className=\"followers-column\"&gt;\n          &lt;h1>FollowersColumn&lt;/h1&gt;\n      &lt;/div&gt;\n    );\n  }\n  \nexport default FollowersColumn\n```"
+      "file": "astra-tik-tok/src/components/FollowersColumn.js",
+      "line": 9,
+      "description": "Replace FollowersColumn.js content with the minimal component information.\n\n```jsx\nconst FollowersColumn = () => {\n    return (\n      <div className=\"followers-column\">\n          <h1>FollowersColumn</h1>\n      </div>\n    );\n  }\n  \nexport default FollowersColumn\n```"
     },
     {
       "title": "Add Header to App.js",
