@@ -1,0 +1,134 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "7. Hook Everything Together",
+  "steps": [
+    {
+      "title": "Copy Card Components into the workspace",
+      "description": "## Copy Card Component Files\n\n>> cp ../Card.js src/components\n\n>> cp ../MiniCard.js src/components\n\n>> cp ../MicroCard.js src/components\n\n>> cp ../tik-tok/public/index.html public"
+    },
+    {
+      "file": "astra-tik-tok/functions/post.js",
+      "selection": {
+        "start": {
+          "line": 21,
+          "character": 13
+        },
+        "end": {
+          "line": 21,
+          "character": 47
+        }
+      },
+      "description": "## Update the stringify call in post.js\n\n```jsx\nbody: JSON.stringify(Object.keys(res).map((i) => res[i])),\n```"
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Home.js",
+      "title": "Update Home.js to use Cards",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 29,
+          "character": 20
+        }
+      },
+      "description": "## Update Home.js to use Cards\n\nSince data can be added to the database with this Netlify function, you will need to provide a way to fetch data so that it can be seen in the app. Make a GET request to the Netlify post function. You can console.log the data retrieved if you like, and setUsers to the returned data as well so that it can be used later. Set the data as users instead of posts this time.\n\nUse an Effect hook and invoke addData and fetchData, and return an empty array for now.\n\n* Import all the new items we just created\n* Add the following code to const addData. This enables you to POST to your database using the addData Netlify function.  It also:\n  * Sets up descendingUsers and topFiveFollowing to use with the different cards\n  * Calls the addData endpoint to add data to the system\n  * Fetches data from the 'post' endpoint to populate the page\n\n```jsx\nimport React, { useState, useEffect } from 'react'\nimport FollowersColumn from '../components/FollowersColumn'\nimport Card from '../components/Card'\nimport MiniCard from '../components/MiniCard'\nimport axios from 'axios'\n\nconst Home = () => {\n  const [users, setUsers] = useState(null)\n  const [userToToggle, setUserToToggle] = useState(null)\n  let descendingUsers\n  let topFiveNotFollowing\n  let topFiveFollowing\n\n  //auto populating with dummy data\n  const addData = async () => {\n    await axios.post('/.netlify/functions/addData')\n  }\n\n  //fetch all the tik-tok posts to your feed\n  const fetchData = async () => {\n    const results = await axios.get('/.netlify/functions/posts')\n    console.log(results.data)\n    setUsers(results.data)\n  }\n\n  //toggle user from followed to unfollowed\n  if (userToToggle) {\n  const newValue = userToToggle.is_followed ? false : true\n  const data = {is_followed: newValue}\n\n   axios.put('/.netlify/functions/edit', {userId: userToToggle.id, data: data })\n    .then(res => res.json())\n    .then(json => console.log(json))\n    .catch(err => console.error('error:' + err))\n    .then(() => fetchData())\n      setUserToToggle(null)\n  }\n\n  useEffect(() => {\n    addData()\n    fetchData()\n  }, [])\n\n  if (users) {\n    descendingUsers = users.sort((a, b) => a.id < b.id ? 1 : -1)\n    const following = users.filter(user => user.is_followed === true)\n    const descendingFollowing = following.sort((a, b) => a.likes < b.likes ? 1 : -1)\n    topFiveFollowing = descendingFollowing.slice(0, 5)\n\n    const notFollowing = users.filter((user) => user.is_followed === false)\n    const descendingNotFollowing = notFollowing.sort((a, b) => a.likes < b.likes ? 1 : -1)\n    topFiveNotFollowing = descendingNotFollowing.slice(0, 5)\n  }\n\n  return (\n    <>\n    {descendingUsers && (\n      <div className='container'>\n        <FollowersColumn users={topFiveFollowing} />\n        <div className='feed'>\n          {descendingUsers.map((descendingUser, index) => (\n            <Card\n              key={index}\n              user={descendingUser}\n              toggleFollow={userToToggle => setUserToToggle(userToToggle)}\n            />\n          ))}\n        </div>\n        <div className=\"suggested-box\">\n          <div className=\"section\">\n            <div className=\"suggested\">\n              <h2 className=\"bold\">Suggested accounts</h2>\n              <div className=\"break\" />\n              {topFiveNotFollowing.map((notFollowingUser, index) => (\n                <MiniCard \n                  key={index} user={notFollowingUser}\n                  toggleFollow={userToToggle => setUserToToggle(userToToggle)}\n\t\t  \t        />)\n\t\t  \t      )}\n            </div>\n          </div>\n        </div>\n      </div>\n      )}\n    </>\n  )\n}\n\nexport default Home\n```",
+      "line": 88
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Home.js",
+      "title": "Update the imports",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 5,
+          "character": 26
+        }
+      },
+      "description": ""
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Home.js",
+      "title": "Create data fetcher",
+      "selection": {
+        "start": {
+          "line": 7,
+          "character": 1
+        },
+        "end": {
+          "line": 42,
+          "character": 11
+        }
+      },
+      "description": "Since data can be added to the database with this Netlify function, you will need to provide a way to fetch data so that it can be seen in the app. Make a GET request to the Netlify posts function. You can console.log the data retrieved if you like, and setUsers to the returned data as well so that it can be used later. Set the data as users instead of posts this time.\n\nUse an Effect hook and invoke addData and fetchData, and return an empty array for now.\n\nAdd the following code to const addData. This enables you to POST to your database using the addData Netlify function.  It also:\n* Sets up descendingUsers and topFiveFollowing to use with the different cards\n* Calls the addData endpoint to add data to the system\n* Fetches data from the 'post' endpoint to populate the page"
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Home.js",
+      "title": "Sort Your Users",
+      
+      "selection": {
+        "start": {
+          "line": 44,
+          "character": 1
+        },
+        "end": {
+          "line": 54,
+          "character": 1
+        }
+      },
+      "description": "Now there is data coming in and out of Astra.  But you’ll want to sort your posts (users) based on descending id order. This can be achieved through filtering. Under useEffect()in Home.js, add the following snippet to sort the posts/users (if they exist). \n"
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Home.js",
+      "title": "Map Sorted Users",
+      
+      "selection": {
+        "start": {
+          "line": 55,
+          "character": 5
+        },
+        "end": {
+          "line": 57,
+          "character": 1
+        }
+      },
+      "description": "With the users now in descending order, go ahead and map them. First, make sure that the elements only render if we get the ordered data back from the database."
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Home.js",
+      "title": "pass topFiveFollowing",
+      
+      "selection": {
+        "start": {
+          "line": 59,
+          "character": 21
+        },
+        "end": {
+          "line": 59,
+          "character": 65
+        }
+      },
+      "description": "Tell Home.js that we want to pass the topFiveFollowing variable into FollowersColumn."
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Home.js",
+      "title": "Map cards in feed",
+      
+      "selection": {
+        "start": {
+          "line": 60,
+          "character": 21
+        },
+        "end": {
+          "line": 61,
+          "character": 74
+        }
+      },
+      "description": "Then in the feed, start mapping onto a Card component. Once again, use descendingUsers. Use the map()function to map each descendingUser (singular) and its index onto a Card component. \n"
+    }
+  ]
+}

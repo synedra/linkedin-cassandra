@@ -99,6 +99,7 @@ fi
 #fi
 
 alias astra-setup="node /config/workspace/tik-tok/node_modules/.bin/astra-setup"
+alias netlify="node /config/workspace/tik-tok/node_modules/.bin/netlify"
 
 export PATH="${PATH}:/opt/bin" 
 
