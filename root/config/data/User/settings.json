@@ -1,0 +1,7 @@
+{
+  "auto-run-command.rules": [
+      {
+          "command": "vsls-contrib.codetour.startTourByTitle?[\"Astra Getting Started\"]"
+      }
+  ]
+}
