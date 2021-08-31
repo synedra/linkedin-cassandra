@@ -39,31 +39,24 @@ RUN useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod \
     # passwordless sudo for users in the 'sudo' group
     && sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 
-USER root
+USER gitpod
 ### Git ###
-RUN add-apt-repository -y ppa:git-core/ppa \
-    && install-packages git git-lfs
-RUN git lfs install --system
-
-# chown the node_modules dir so we can install there.
-RUN chown -R abc:abc /usr/lib/node_modules/
-RUN chown -R abc:abc /config
+RUN sudo add-apt-repository -y ppa:git-core/ppa \
+    && sudo install-packages git git-lfs
+RUN sudo git lfs install --system
 
 
 # Set the abc user, so installed node_modules will have the same 
 # owner as the code-server app.
-COPY --from=builder /home/gitpod/ /home/abc
-RUN chown -R abc:abc /home/abc
-RUN chmod 777 /usr/bin
-USER abc
-WORKDIR /usr/abc
-RUN { echo && echo "PS1='\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] $ '" ; } >> .bashrc
-RUN git clone https://github.com/synedra/appdev-week2-tiktok /config/workspace/tik-tok
-
+COPY --from=builder /home/gitpod/ /home/gitpod
+RUN sudo chmod 777 /usr/bin
+RUN sudo chown -R gitpod.gitpod /usr/lib/node_modules
+RUN { echo && echo "PS1='\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] $ '" ; } >> /home/gitpod/.bashrc
+RUN sudo git clone https://github.com/synedra/appdev-week2-tiktok /config/workspace/tik-tok
+RUN sudo chown -R gitpod.gitpod /config/workspace/tik-tok
 WORKDIR /config/workspace/tik-tok
-
-RUN npm install -g netlify-cli astra-setup axios
-RUN pip3 install httpie-astra
+RUN HOME=/home/gitpod npm install -g netlify-cli astra-setup axios
+RUN sudo pip3 install httpie-astra
 
 ENV SUDO_PASSWORD=password
 USER root
