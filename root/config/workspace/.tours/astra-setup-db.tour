@@ -1,0 +1,15 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Astra Getting Started",
+  "nextTour": "2. Start Building a React app",
+  "steps": [
+    {
+      "title": "Authentication",
+      "description": "## Authentication\n\n>> npx create-react-app astra-tik-tok; cd astra-tik-tok\n\n>> astra-setup workshops tiktok\n\n[Visit Astra](https://astra.datastax.com) and follow the instructions in the console to get your token for the astra-setup step.\n\n"
+    },
+    {
+      "title": "Setup Git",
+      "description": ">> git init\n\n>> git config --global user.email TikTok@example.com\n\n>> git config --global user.name 'Tik Tok'\n\n>> git add -A\n\n>> git commit -a -m 'Initial commit'\n\n>> git rm -rf yarn.lock src/App.test.js src/reportWebVitals.js src/setupTests.js\n"
+    }
+  ]
+}
