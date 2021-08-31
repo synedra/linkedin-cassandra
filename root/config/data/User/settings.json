@@ -1,7 +1,7 @@
 {
   "auto-run-command.rules": [
       {
-          "command": "vsls-contrib.codetour.startTourByTitle?[\"Astra Getting Started\"]"
+          "command": "vsls-contrib.codetour.startTourByTitle?[\"1. Astra Getting Started\"]"
       }
   ]
 }
