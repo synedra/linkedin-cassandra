@@ -10,6 +10,10 @@
     {
       "title": "Setup Git",
       "description": ">> git init\n\n>> git config --global user.email TikTok@example.com\n\n>> git config --global user.name 'Tik Tok'\n\n>> git add -A\n\n>> git commit -a -m 'Initial commit'\n\n>> git rm -rf yarn.lock src/App.test.js src/reportWebVitals.js src/setupTests.js\n"
+    },
+    {
+      "title": "Knowledge Check",
+      "description": "Visit the [Knowledge Check](https://datastax.tahoe.appsembler.com/login?next=/courses/course-v1%3Adatastax%2BDSTEST%2BTRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/b8287d6068fc48e5b514304750054f4f/1%3Factivate_block_id%3Dblock-v1%253Adatastax%252BDSTEST%252BTRIAL%252Btype%2540vertical%252Bblock%2540ccb749c999874b09bf9666e7febdfea7) for this section to make sure everything's clear.  See you when you get back!"
     }
   ]
 }
