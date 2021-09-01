@@ -2,6 +2,9 @@
   "$schema": "https://aka.ms/codetour-schema",
   "title": "2. Start Building a React app",
   "nextTour": "3. Netlify",
+  "commands": [
+    "workbench.action.terminal.newWithCwd?[{\"cwd\":\"/opt/workspace/astra-tik-tok\"}]"
+  ],
   "steps": [
     {
       "file": "astra-tik-tok/src/index.js",
@@ -17,11 +20,7 @@
         }
       },
       "description": "## index.js File\n\nYou won't be using the \"reportWebVitals\" function, so let's get rid of it entirely.\n\n```jsx\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.css';\nimport App from './App';\n\n\nReactDOM.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>,\n  document.getElementById('root')\n);\n```",
-      "line": 33
-    },
-    {
-      "title": "App.js description",
-      "description": "App.js - this file defines your component, and is used by index.js to generate content which it passes along to index.html for rendering."
+      "line": 66
     },
     {
       "file": "astra-tik-tok/src/App.js",
@@ -36,37 +35,25 @@
           "character": 1
         }
       },
-      "description": "Replace App.js content with the minimal component information.\n\n```jsx\nimport './App.css'\nconst App = () => {\n  return (\n    <div className=\"App\">\n    </div>\n  );\n}\nexport default App\n```\n\n[Save file](command:workbench.actions.file.save)",
-      "line": 42
+      "description": "Replace App.js content with the minimal component information.\n\n```jsx\nimport './App.css'\nconst App = () => {\n  return (\n    <div className=\"App\">\n    </div>\n  );\n}\nexport default App\n```\n",
+      "line": 56
     },
     {
       "title": "Install react-router-dom",
       "commands": [
         "workbench.action.terminal.newWithCwd?['cwd':'/config/workspace/astra-tik-tok']"
       ],
-      "description": "Stop the running process with Ctrl-C\n\nInstall the react-router-dom package\n\n>> yarn add react-router-dom"
+      "description": "Install the react-router-dom package\n\n>> yarn add react-router-dom"
     },
     {
       "file": "astra-tik-tok/src/App.js",
       "title": "Add react-router-dom to App.js",
-      "line": 2,
+      "line": 4,
       "description": "Add the import statement for react-router-dom at the top of App.js\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\n\n```"
     },
     {
       "title": "Create the directory for the pages components",
-      "description": "Create the directory for the pages components.\n\n>> mkdir -p src/pages; touch src/pages/Home.js; touch src/pages/Upload.js\n"
-    },
-    {
-      "file": "astra-tik-tok/src/pages/Home.js",
-      "title": "Create Home.js",
-      "line": 103,
-      "description": "Replace Home.js content with the minimal component information.\n\n```jsx\nimport FollowersColumn from '../components/FollowersColumn'\nimport '../App.css'\nconst Home = () => {\n    return (\n        <div className=\"container\">\n            <FollowersColumn />\n            <div className=\"feed\">\n                <h1>Home</h1>\n                </div>\n                <div className=\"suggested-box\"></div>\n                </div>\n                );\n}\nexport default Home\n\n```"
-    },
-    {
-      "file": "astra-tik-tok/src/pages/Upload.js",
-      "title": "Create Upload.js",
-      "line": 71,
-      "description": "Replace Upload.js content with the minimal component information.\n\n```jsx\nimport '../App.css'\nconst Upload = () => {\n  return (\n    <div className=\"Upload\">\n    </div>\n  );\n}\nexport default Upload\n```"
+      "description": "Create the directory for the pages components.\n\n>> mkdir -p src/pages; cp ../resources/Home.js src/pages; cp ../resources/Upload.js src/pages\n"
     },
     {
       "file": "astra-tik-tok/src/App.js",

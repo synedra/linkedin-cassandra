@@ -2,7 +2,7 @@ FROM linuxserver/code-server
 
 # apt-get install
 RUN apt-get update
-RUN apt-get install -y -q python3 python3-pip
+RUN apt-get install -y -q python3 python3-pip chromium-chromedriver
 RUN apt-get clean
 
 RUN chown -R abc:abc /usr/lib/node_modules
