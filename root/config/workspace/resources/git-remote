@@ -6,3 +6,6 @@ read username
 echo Ok, I am going to execute the following command for you:
 echo git remote add origin https://github.com/$username/tiktok-clone
 git remote add origin https://github.com/$username/tiktok-clone
+echo
+echo Here are the current remotes set for your repository:
+git remote -v
