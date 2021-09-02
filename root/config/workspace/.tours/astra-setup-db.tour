@@ -5,7 +5,7 @@
   "steps": [
     {
       "title": "Authentication",
-      "description": "## Authentication\n\n>> npx create-react-app astra-tik-tok; cd astra-tik-tok\n\n>> astra-setup workshops tiktok\n\n[Visit Astra](https://astra.datastax.com) and follow the instructions in the console to get your token for the astra-setup step.\n\n"
+      "description": "## Initial Setup\nLet's start by using `create-react-app` to get a basic React app up and running. We'll use this as a base and start adding our custom components.\n\n**RUN**\n>> npx create-react-app astra-tik-tok; cd astra-tik-tok\n\n## Authentication\nNext, we need to connect to our Astra DB and store an authentication token in order to store and retrieve data. We'll use `astra-setup` for this. *Note: `astra-setup` requires an authentication token, and will guide you on how to generate this in your Astra DB dashboard.*\n\n**RUN**\n>> astra-setup workshops tiktok\n\n[Visit Astra](https://astra.datastax.com) and follow the instructions in the console to get your token for the astra-setup step.\n\n"
     },
     {
       "title": "Setup Git",
@@ -13,7 +13,7 @@
     },
     {
       "title": "Knowledge Check",
-      "description": "Visit the [Knowledge Check](https://datastax.tahoe.appsembler.com/courses/course-v1:datastax+DSTEST+TRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/b8287d6068fc48e5b514304750054f4f/1?activate_block_id=block-v1%3Adatastax%2BDSTEST%2BTRIAL%2Btype%40html%2Bblock%402b75cb84f6fb4f4eb550eff5e5c96067) for this section to make sure everything's clear.  See you when you get back!"
+      "description": "Visit the [Knowledge Check](https://datastax.tahoe.appsembler.com/login?next=/courses/course-v1%3Adatastax%2BDSTEST%2BTRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/b8287d6068fc48e5b514304750054f4f/1%3Factivate_block_id%3Dblock-v1%253Adatastax%252BDSTEST%252BTRIAL%252Btype%2540vertical%252Bblock%2540ccb749c999874b09bf9666e7febdfea7) for this section to make sure everything's clear.  See you when you get back!"
     }
   ]
 }
