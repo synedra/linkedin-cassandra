@@ -2,6 +2,9 @@
   "$schema": "https://aka.ms/codetour-schema",
   "title": "3. Netlify",
   "nextTour": "4. Functions",
+  "commands": [
+    "workbench.action.terminal.newWithCwd?[{\"cwd\":\"/config/workspace/astra-tik-tok\"}]"
+  ],
   "steps": [
     {
       "title": "Introduction to Netlify",

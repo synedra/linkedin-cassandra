@@ -1,10 +1,11 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "7. Hook Everything Together",
+  "title": "6. Hook Everything Together",
+  "nextTour": "7. Add Following Function",
   "steps": [
     {
       "title": "Copy Card Components into the workspace",
-      "description": "## Copy Card Component Files\n\n>> cp ../Card.js src/components\n\n>> cp ../MiniCard.js src/components\n\n>> cp ../MicroCard.js src/components\n\n>> cp ../tik-tok/public/index.html public"
+      "description": "## Copy Card Component Files\n\n>> cd /config/workspace/astra-tik-tok\n\n>> cp /config/workspace/resources/Card.js src/components\n\n>> cp /config/workspace/resources/App2.css src/App.css\n\n>> cp /config/workspace/resources/MiniCard.js src/components\n\n>> cp /config/workspace/resources/MicroCard.js src/components\n\n>> cp /opt/workspace/tik-tok/public/index.html public"
     },
     {
       "file": "astra-tik-tok/functions/post.js",
@@ -34,7 +35,7 @@
         }
       },
       "description": "## Update Home.js to use Cards\n\nSince data can be added to the database with this Netlify function, you will need to provide a way to fetch data so that it can be seen in the app. Make a GET request to the Netlify post function. You can console.log the data retrieved if you like, and setUsers to the returned data as well so that it can be used later. Set the data as users instead of posts this time.\n\nUse an Effect hook and invoke addData and fetchData, and return an empty array for now.\n\n* Import all the new items we just created\n* Add the following code to const addData. This enables you to POST to your database using the addData Netlify function.  It also:\n  * Sets up descendingUsers and topFiveFollowing to use with the different cards\n  * Calls the addData endpoint to add data to the system\n  * Fetches data from the 'post' endpoint to populate the page\n\n```jsx\nimport React, { useState, useEffect } from 'react'\nimport FollowersColumn from '../components/FollowersColumn'\nimport Card from '../components/Card'\nimport MiniCard from '../components/MiniCard'\nimport axios from 'axios'\n\nconst Home = () => {\n  const [users, setUsers] = useState(null)\n  const [userToToggle, setUserToToggle] = useState(null)\n  let descendingUsers\n  let topFiveNotFollowing\n  let topFiveFollowing\n\n  //auto populating with dummy data\n  const addData = async () => {\n    await axios.post('/.netlify/functions/addData')\n  }\n\n  //fetch all the tik-tok posts to your feed\n  const fetchData = async () => {\n    const results = await axios.get('/.netlify/functions/posts')\n    console.log(results.data)\n    setUsers(results.data)\n  }\n\n  //toggle user from followed to unfollowed\n  if (userToToggle) {\n  const newValue = userToToggle.is_followed ? false : true\n  const data = {is_followed: newValue}\n\n   axios.put('/.netlify/functions/edit', {userId: userToToggle.id, data: data })\n    .then(res => res.json())\n    .then(json => console.log(json))\n    .catch(err => console.error('error:' + err))\n    .then(() => fetchData())\n      setUserToToggle(null)\n  }\n\n  useEffect(() => {\n    addData()\n    fetchData()\n  }, [])\n\n  if (users) {\n    descendingUsers = users.sort((a, b) => a.id < b.id ? 1 : -1)\n    const following = users.filter(user => user.is_followed === true)\n    const descendingFollowing = following.sort((a, b) => a.likes < b.likes ? 1 : -1)\n    topFiveFollowing = descendingFollowing.slice(0, 5)\n\n    const notFollowing = users.filter((user) => user.is_followed === false)\n    const descendingNotFollowing = notFollowing.sort((a, b) => a.likes < b.likes ? 1 : -1)\n    topFiveNotFollowing = descendingNotFollowing.slice(0, 5)\n  }\n\n  return (\n    <>\n    {descendingUsers && (\n      <div className='container'>\n        <FollowersColumn users={topFiveFollowing} />\n        <div className='feed'>\n          {descendingUsers.map((descendingUser, index) => (\n            <Card\n              key={index}\n              user={descendingUser}\n              toggleFollow={userToToggle => setUserToToggle(userToToggle)}\n            />\n          ))}\n        </div>\n        <div className=\"suggested-box\">\n          <div className=\"section\">\n            <div className=\"suggested\">\n              <h2 className=\"bold\">Suggested accounts</h2>\n              <div className=\"break\" />\n              {topFiveNotFollowing.map((notFollowingUser, index) => (\n                <MiniCard \n                  key={index} user={notFollowingUser}\n                  toggleFollow={userToToggle => setUserToToggle(userToToggle)}\n\t\t  \t        />)\n\t\t  \t      )}\n            </div>\n          </div>\n        </div>\n      </div>\n      )}\n    </>\n  )\n}\n\nexport default Home\n```",
-      "line": 88
+      "line": 176
     },
     {
       "file": "astra-tik-tok/src/pages/Home.js",
@@ -49,7 +50,7 @@
           "character": 26
         }
       },
-      "description": ""
+      "description": "import our new components to use on the home screen"
     },
     {
       "file": "astra-tik-tok/src/pages/Home.js",
@@ -69,7 +70,6 @@
     {
       "file": "astra-tik-tok/src/pages/Home.js",
       "title": "Sort Your Users",
-      
       "selection": {
         "start": {
           "line": 44,
@@ -85,7 +85,6 @@
     {
       "file": "astra-tik-tok/src/pages/Home.js",
       "title": "Map Sorted Users",
-      
       "selection": {
         "start": {
           "line": 55,
@@ -101,7 +100,6 @@
     {
       "file": "astra-tik-tok/src/pages/Home.js",
       "title": "pass topFiveFollowing",
-      
       "selection": {
         "start": {
           "line": 59,
@@ -117,7 +115,6 @@
     {
       "file": "astra-tik-tok/src/pages/Home.js",
       "title": "Map cards in feed",
-      
       "selection": {
         "start": {
           "line": 60,
@@ -129,6 +126,25 @@
         }
       },
       "description": "Then in the feed, start mapping onto a Card component. Once again, use descendingUsers. Use the map()function to map each descendingUser (singular) and its index onto a Card component. \n"
+    },
+    {
+      "file": "astra-tik-tok/src/components/Card.js",
+      "selection": {
+        "start": {
+          "line": 3,
+          "character": 1
+        },
+        "end": {
+          "line": 4,
+          "character": 1
+        }
+      },
+      "description": "## Receive the user in Card.js\n\n```jsx\nconst Card = ({ user }) => {\n  console.log('user', user)\n```",
+      "line": null
+    },
+    {
+      "title": "Check your changes",
+      "description": "## Check your changes\n\nStart the server:\n\n>> netlify dev\n\nVisit the [home page](http://localhost:8888) of your site to make sure things are rendering appropriately."
     }
   ]
 }
