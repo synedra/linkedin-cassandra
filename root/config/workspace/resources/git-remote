@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo This command will add your new github repository as a remote for the local repository.
+echo First I will need to get your github username
+read username
+echo Ok, I am going to execute the following command for you:
+echo git remote add origin https://github.com/$username/tiktok-clone
+git remote add origin https://github.com/$username/tiktok-clone
