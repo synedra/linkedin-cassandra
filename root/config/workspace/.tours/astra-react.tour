@@ -19,13 +19,8 @@
           "character": 1
         }
       },
-<<<<<<< HEAD
-      "description": "## index.js File\n\nYou won't be using the \"reportWebVitals\" function, so let's get rid of it entirely.\n\n```jsx\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.css';\nimport App from './App';\n\n\nReactDOM.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>,\n  document.getElementById('root')\n);\n```",
-      "line": 77
-=======
       "description": "## Edit boilerplate React files\nFirst, we're going to make a few edits to the `create-react-app` boilerplate code. Let's start with `index.js`.\n\n---\n\n### Edit index.js\n\nYou won't be using the \"reportWebVitals\" function, so let's get rid of it entirely.\n\n```jsx\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.css';\nimport App from './App';\n\n\nReactDOM.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>,\n  document.getElementById('root')\n);\n```",
       "line": 88
->>>>>>> 2a2508289dcfeb86d53d76251b0fe889a96b256d
     },
     {
       "file": "astra-tik-tok/src/App.js",
@@ -40,13 +35,8 @@
           "character": 1
         }
       },
-<<<<<<< HEAD
-      "description": "Replace App.js content with the minimal component information.\n\n```jsx\nimport './App.css'\nconst App = () => {\n  return (\n    <div className=\"App\">\n    </div>\n  );\n}\nexport default App\n```\n",
-      "line": 63
-=======
       "description": "## App.js\nNext, we'll remove all the example content from our main file, `App.js`.\n\n---\n\n### Edit App.js\nReplace App.js content with the minimal component information.\n\n```jsx\nimport './App.css'\nconst App = () => {\n  return (\n    <div className=\"App\">\n    </div>\n  );\n}\nexport default App\n```\n",
       "line": 70
->>>>>>> 2a2508289dcfeb86d53d76251b0fe889a96b256d
     },
     {
       "title": "Install react-router-dom",
@@ -58,21 +48,12 @@
     {
       "file": "astra-tik-tok/src/App.js",
       "title": "Add react-router-dom to App.js",
-<<<<<<< HEAD
-      "line": 1,
-      "description": "Add the import statement for react-router-dom at the top of App.js\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\n\n```"
-    },
-    {
-      "title": "Create the directory for the pages components",
-      "description": "Create the directory for the pages components.\n\n>> mkdir -p src/pages; cp ../resources/Home.js src/pages; cp ../resources/Upload.js src/pages\n\n>> npm install faker\n"
-=======
       "line": 2,
       "description": "## Import Routing Library\n\nNow we need to import the `react-router` library to use in our app.\n\n---\n\nAdd the import statement for react-router-dom at the top of App.js\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\n\n```"
     },
     {
       "title": "Create the directory for the pages components",
       "description": "## Creating Pages\n\nSo now lets create our basic pages for our app. We'll be making two pages, `Home.js` and `Upload.js`.\nFirst, we'll create a new directory for these pages.\n\n---\n\nCreate the directory for the pages components.\n\n>> mkdir -p src/pages; \n\n...and import some premade page files.\n\n>> cp ../resources/Home.js src/pages; cp ../resources/Upload.js src/pages\n"
->>>>>>> 2a2508289dcfeb86d53d76251b0fe889a96b256d
     },
     {
       "file": "astra-tik-tok/src/App.js",
@@ -87,13 +68,8 @@
         }
       },
       "title": "Add routing magic to App.js",
-<<<<<<< HEAD
-      "description": "## Add structure to App.js\n\nIt's time to get App.js ready to do some real work.\n\nYou'll be making a few changes with this:\n* Importing the HashRouter, Route and Switch components\n* Adding a <Hashrouter> at the top of your App component\n* In the <Hashrouter>, inserting a Switch component to direct queries to the right place\n* Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match \"wins\" so you can land in some frustration if you don't keep this in mind.\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\nimport Home from './pages/Home'\nimport Upload from './pages/Upload'\nimport './App.css'\n\nconst App = () => {\n  return (\n    <HashRouter>\n    <Switch>\n      <Route path= \"/upload\" component={Upload}/>\n      <Route path= \"/\" component={Home}/>\n    </Switch>\n  </HashRouter>\n  );\n}\n\nexport default App\n```",
-      "line": 176
-=======
       "description": "## Add structure to App.js\n\nIt's time to get App.js ready to do some real work.\n\nYou'll be making a few changes with this:\n* Importing the HashRouter, Route and Switch components\n* Adding a `<Hashrouter>` at the top of your App component\n* In the `<Hashrouter>`, inserting a Switch component to direct queries to the right place\n* Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match \"wins\" so you can land in some frustration if you don't keep this in mind.\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\nimport Home from './pages/Home'\nimport Upload from './pages/Upload'\nimport './App.css'\n\nconst App = () => {\n  return (\n    <HashRouter>\n    <Switch>\n      <Route path= \"/upload\" component={Upload}/>\n      <Route path= \"/\" component={Home}/>\n    </Switch>\n  </HashRouter>\n  );\n}\n\nexport default App\n```",
       "line": 160
->>>>>>> 2a2508289dcfeb86d53d76251b0fe889a96b256d
     },
     {
       "title": "Adding content to components",
@@ -106,13 +82,8 @@
     {
       "title": "Create Header file",
       "file": "astra-tik-tok/src/components/Header.js",
-<<<<<<< HEAD
-      "line": 81,
-      "description": "Replace Header.js content with the minimal component information.\n\n```jsx\nconst Header = () => {\n    return (\n      <div className=\"header\">\n          <h1>Header</h1>\n      </div>\n    );\n  }\n  \nexport default Header\n```"
-=======
       "line": 89,
       "description": "## Header.js\n\nLet's create a basic header. All this component is doing is rendering a styled div that contains our `<h1>` element.\n\n```jsx\nconst Header = () => {\n    return (\n      <div className=\"header\">\n          <h1>Header</h1>\n      </div>\n    );\n  }\n  \nexport default Header\n```"
->>>>>>> 2a2508289dcfeb86d53d76251b0fe889a96b256d
     },
     {
       "title": "Create FollowersColumn file",
