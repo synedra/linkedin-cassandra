@@ -48,7 +48,7 @@
     {
       "file": "astra-tik-tok/src/App.js",
       "title": "Add react-router-dom to App.js",
-      "line": 5,
+      "line": 1,
       "description": "Add the import statement for react-router-dom at the top of App.js\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\n\n```"
     },
     {
@@ -123,6 +123,11 @@
       },
       "description": "## Customize Home.js\n\n```jsx\nimport FollowersColumn from '../components/FollowersColumn'\n\nconst Home = () => {\n\n  return (\n    <>\n      <div className='container'>\n        <FollowersColumn />\n        <div className='feed'>\n  \n        </div>\n        <div className=\"suggested-box\">\n          <div className=\"section\">\n            <div className=\"suggested\">\n              <h2 className=\"bold\">Suggested accounts</h2>\n              <div className=\"break\" />\n\n            </div>\n          </div>\n        </div>\n      </div>\n    </>\n  )\n}\n\nexport default Home\n```",
       "line": 75
+    },
+    {
+      "title": "Knowledge Check",
+      "description": "Visit the [Knowledge Check](https://studio.tahoe.appsembler.com/container/block-v1:datastax+DSTEST+TRIAL+type@vertical+block@ab4559c327924239904306d1415576b3) for this section to make sure everything's clear.  See you when you get back!"
     }
   ]
 }
+
