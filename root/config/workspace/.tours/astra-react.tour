@@ -20,7 +20,7 @@
         }
       },
       "description": "## Edit boilerplate React files\nFirst, we're going to make a few edits to the `create-react-app` boilerplate code. Let's start with `index.js`.\n\n---\n\n### Edit index.js\n\nYou won't be using the \"reportWebVitals\" function, so let's get rid of it entirely.\n\n```jsx\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.css';\nimport App from './App';\n\n\nReactDOM.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>,\n  document.getElementById('root')\n);\n```",
-      "line": 110
+      "line": 121
     },
     {
       "file": "astra-tik-tok/src/App.js",
@@ -36,7 +36,7 @@
         }
       },
       "description": "## App.js\nNext, we'll remove all the example content from our main file, `App.js`.\n\n---\n\n### Edit App.js\nReplace App.js content with the minimal component information.\n\n```jsx\nimport './App.css'\nconst App = () => {\n  return (\n    <div className=\"App\">\n    </div>\n  );\n}\nexport default App\n```\n",
-      "line": 84
+      "line": 91
     },
     {
       "title": "Install react-router-dom",
@@ -48,7 +48,7 @@
     {
       "file": "astra-tik-tok/src/App.js",
       "title": "Add react-router-dom to App.js",
-      "line": 2,
+      "line": 3,
       "description": "## Import Routing Library\n\nNow we need to import the `react-router` library to use in our app.\n\n---\n\nAdd the import statement for react-router-dom at the top of App.js\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\n\n```"
     },
     {
@@ -69,7 +69,7 @@
       },
       "title": "Add routing magic to App.js",
       "description": "## Add structure to App.js\n\nIt's time to get App.js ready to do some real work.\n\nYou'll be making a few changes with this:\n* Importing the HashRouter, Route and Switch components\n* Adding a `<Hashrouter>` at the top of your App component\n* In the `<Hashrouter>`, inserting a Switch component to direct queries to the right place\n* Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match \"wins\" so you can land in some frustration if you don't keep this in mind.\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\nimport Home from './pages/Home'\nimport Upload from './pages/Upload'\nimport './App.css'\n\nconst App = () => {\n  return (\n    <HashRouter>\n    <Switch>\n      <Route path= \"/upload\" component={Upload}/>\n      <Route path= \"/\" component={Home}/>\n    </Switch>\n  </HashRouter>\n  );\n}\n\nexport default App\n```",
-      "line": 192
+      "line": 208
     },
     {
       "title": "Adding content to components",
@@ -92,14 +92,14 @@
     {
       "title": "Add Header to App.js",
       "file": "astra-tik-tok/src/App.js",
-      "description": "# Import header into App.js\n\nLet's import our new components into `App.js` and use them.\n\n```jsx\nimport Header from './components/Header'\n```\n",
+      "description": "# Import header into App.js\n\nLet's import our new components into `App.js` and use them.\n\n```jsx\nimport Header from './components/Header'\n\n```\n",
       "line": 1
     },
     {
       "title": "Add a Header to the App component, under the <HashRouter> tag.",
       "file": "astra-tik-tok/src/App.js",
       "description": "### Add header to the HashRouter component\n\n```jsx\n   <Header />\n   \n```\n",
-      "line": 10
+      "line": 11
     },
     {
       "title": "Style your components",
@@ -120,7 +120,7 @@
         }
       },
       "description": "## Customize Home.js\n\nLet's import our `FollowersColumn.js` component into our `Home.js` page and break up the page into sections using our new styles.\n\n```jsx\nimport FollowersColumn from '../components/FollowersColumn'\n\nconst Home = () => {\n\n  return (\n    <>\n      <div className='container'>\n        <FollowersColumn />\n        <div className='feed'>\n  \n        </div>\n        <div className=\"suggested-box\">\n          <div className=\"section\">\n            <div className=\"suggested\">\n              <h2 className=\"bold\">Suggested accounts</h2>\n              <div className=\"break\" />\n\n            </div>\n          </div>\n        </div>\n      </div>\n    </>\n  )\n}\n\nexport default Home\n```",
-      "line": 275
+      "line": 300
     },
     {
       "file": "astra-tik-tok/src/pages/Upload.js",

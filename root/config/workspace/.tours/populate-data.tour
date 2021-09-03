@@ -17,7 +17,7 @@
         }
       },
       "description": "## Update addData.js\n\nUpdate the addData.js file so it pulls from data.json using fs() instead of having hard coded values.\n\n```jsx\nconst fs = import('fs')\nconst { createClient } = require(\"@astrajs/collections\")\n\nconst collection = 'posts'\n\nexports.handler = async function (event, context, callback) {\n    const fs = require('fs')\n      const astraClient = await createClient({\n       astraDatabaseId: process.env.ASTRA_DB_ID,\n       astraDatabaseRegion: process.env.ASTRA_DB_REGION,\n       applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,\n     });\n\n  const posts = astraClient\n    .namespace(process.env.ASTRA_DB_KEYSPACE)\n    .collection(collection)\n\n  const data = JSON.parse(fs.readFileSync('/config/workspace/resources/data.json'))\n    \n  try {\n        for (let i = 0; i < data.length; i++) {\n          await posts.create(data[i].id.toString(), data[i])\n        }\n\n        return {\n            statusCode: 200,\n        }\n    } catch (e) {\n        console.error(e);\n        return {\n            statusCode: 500,\n            body: JSON.stringify(e),\n        }\n    }\n}  \n```",
-      "line": 34
+      "line": 68
     },
     {
       "title": "Import the data and check the results",

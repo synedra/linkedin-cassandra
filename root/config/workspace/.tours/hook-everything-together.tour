@@ -5,7 +5,7 @@
   "steps": [
     {
       "title": "Copy Card Components into the workspace",
-      "description": "## Copy Card Component Files\n\n>> cd /config/workspace/astra-tik-tok\n\nUpdate your main components.\n\n>> cp /config/workspace/resources/Card.js src/components\n\n>> cp /config/workspace/resources/MiniCard.js src/components\n\n>> cp /config/workspace/resources/MicroCard.js src/components\n\n>> cp /config/workspace/resources/FollowersColumn.js src/components\n\n>> cp /config/workspace/resources/Header.js src/components\n\nNext, pull in styling for the new components\n\n>> cp /config/workspace/resources/App.css src/App.css\n\nGrab your Home page\n\n>> cp /config/workspace/resources/HomeFinal.js src/pages/Home.js\n\nAnd finally, your main page.\n\n>> cp /opt/workspace/tik-tok/public/index.html public\n\nWe've moved all the App.js information into the page components, so we can remove it now.\n\n>> rm /config/workspace/astra-tik-tok/src/App.js"
+      "description": "## Copy Card Component Files\n\n>> cd /config/workspace/astra-tik-tok\n\nUpdate your main components.\n\n>> cp /config/workspace/resources/Card.js src/components\n\n>> cp /config/workspace/resources/MiniCard.js src/components\n\n>> cp /config/workspace/resources/MicroCard.js src/components\n\n>> cp /config/workspace/resources/FollowersColumn.js src/components\n\n>> cp /config/workspace/resources/Header.js src/components\n\nNext, pull in styling for the new components\n\n>> cp /config/workspace/resources/App.css src/App.css\n\nGrab your Home page\n\n>> cp /config/workspace/resources/HomeFinal.js src/pages/Home.js\n\nAnd finally, your main page.\n\n>> cp /opt/workspace/tik-tok/public/index.html public\n"
     },
     {
       "title": "Review Home.js",
@@ -44,21 +44,6 @@
     },
     {
       "file": "astra-tik-tok/src/pages/Home.js",
-      "title": "Create data fetcher",
-      "selection": {
-        "start": {
-          "line": 7,
-          "character": 1
-        },
-        "end": {
-          "line": 42,
-          "character": 11
-        }
-      },
-      "description": "Since data can be added to the database with this Netlify function, you will need to provide a way to fetch data so that it can be seen in the app. Make a GET request to the Netlify posts function. You can console.log the data retrieved if you like, and setUsers to the returned data as well so that it can be used later. Set the data as users instead of posts this time.\n\nUse an Effect hook and invoke addData and fetchData, and return an empty array for now.\n\nAdd the following code to const addData. This enables you to POST to your database using the addData Netlify function.  It also:\n* Sets up descendingUsers and topFiveFollowing to use with the different cards\n* Calls the addData endpoint to add data to the system\n* Fetches data from the 'post' endpoint to populate the page"
-    },
-    {
-      "file": "astra-tik-tok/src/pages/Home.js",
       "title": "Sort Your Users",
       "selection": {
         "start": {
@@ -71,6 +56,21 @@
         }
       },
       "description": "Now there is data coming in and out of Astra.  But you’ll want to sort your posts (users) based on descending id order. This can be achieved through filtering. Under useEffect()in Home.js, add the following snippet to sort the posts/users (if they exist). \n"
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Home.js",
+      "title": "Create data fetcher",
+      "selection": {
+        "start": {
+          "line": 7,
+          "character": 1
+        },
+        "end": {
+          "line": 42,
+          "character": 11
+        }
+      },
+      "description": "Since data can be added to the database with this Netlify function, you will need to provide a way to fetch data so that it can be seen in the app. Make a GET request to the Netlify posts function. You can console.log the data retrieved if you like, and setUsers to the returned data as well so that it can be used later. Set the data as users instead of posts this time.\n\nUse an Effect hook and invoke addData and fetchData, and return an empty array for now.\n\nAdd the following code to const addData. This enables you to POST to your database using the addData Netlify function.  It also:\n* Sets up descendingUsers and topFiveFollowing to use with the different cards\n* Calls the addData endpoint to add data to the system\n* Fetches data from the 'post' endpoint to populate the page"
     },
     {
       "file": "astra-tik-tok/src/pages/Home.js",
