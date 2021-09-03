@@ -13,7 +13,7 @@
     },
     {
       "title": "Setup github repository",
-      "description": "[Open Github](command:vscode.open?[\"https://github.com\"]). If you do not have a GitHub account, create one now.  \n\nClick the \"New\" button in the left bar to create a new repository.\n\n![image](https://user-images.githubusercontent.com/77410784/131268582-001e3aa5-f7ba-4246-86d7-1197de9bf484.png)\n\nName the new repository 'tiktok-clone' as shown in the image. Don't worry about the following setup steps.  Click \"Create Repository.\"\n\nMake sure your local repository is up-to-date:\n\n>> git commit -a -m \"Ready to deploy\"\n\nAdd the github repository as your origin.\n\n>> git remote add origin https://github.com/{username}/tiktok-clone.git\n\nRename the master branch to \"main\"\n\n>> git branch -M main\n\nPush your repository up to github.\n\n>> git push -u origin main\n\n"
+      "description": "[Open Github](command:vscode.open?[\"https://github.com\"]). If you do not have a GitHub account, create one now.  \n\nClick the \"New\" button in the left bar to create a new repository.\n\n![image](https://user-images.githubusercontent.com/77410784/131268582-001e3aa5-f7ba-4246-86d7-1197de9bf484.png)\n\nName the new repository 'tiktok-clone' as shown in the image. Don't worry about the following setup steps.  Click \"Create Repository.\"\n\nMake sure your local repository is up-to-date:\n\n>> git commit -a -m \"Ready to deploy\"\n\nAdd the github repository as your origin.\n\n>> git-remote\n\nRename the master branch to \"main\"\n\n>> git branch -M main\n\nPush your repository up to github.\n\n>> git push -u origin main\n\n"
     },
     {
       "title": "Knowledge Check",

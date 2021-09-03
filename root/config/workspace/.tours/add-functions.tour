@@ -14,7 +14,7 @@
             "character": 13
           }
         },
-        "description": "## Add personalization\n\nUpdate Card.js to include information about the user.\n\n```jsx\n      <div className=\"section\">\n        <div className=\"user-info\">\n          <img className=\"user-profile\"  src={user.avatar} width={'100%'} />\n          <div>\n          <div className=\"section\">\n            <h3 className=\"bold\">{user.name}</h3>\n            <p className=\"username\">{user.username}</p>\n            <p>{user.timestamp}</p>\n          </div> \n          <p>{user.caption}</p>\n          </div>\n        </div>\n        {user.button_visible && <div className={user.is_followed? \"followed-button\" : \"follow-button\"}>\n            {user.is_followed? \"Following\": \"Follow\"}\n        </div>}\n      </div>\n      <video className=\"video\" controls>\n        <source src={user.video} type=\"video/mp4\" />\n      </video>\n      <div className=\"section socials\">\n         <i class=\"far fa-heart\"></i>\n        <div className=\"social-tag\">{user.likes}</div>\n        <i class=\"far fa-comment-dots\"></i>\n        <div className=\"social-tag\">{user.comments}</div>\n        <i class=\"far fa-share-square\"></i>\n      </div>\n```"
+        "description": "## Add personalization\n\nCopy in a new Card.js to include information about the user.\n\n>> cp ../resources/CardFinal.js src/components"
       },
       {
         "file": "astra-tik-tok/src/components/MicroCard.js",
@@ -42,11 +42,25 @@
             "character": 11
           }
         },
-        "description": "## Add personalization in the MicroCard\n\n```jsx\n<div className=\"section microcard\">\n      <img className=\"user-profile\"  src={user.avatar} width={'100%'} />\n      <div>\n        <h3 className=\"bold\">{user.username}</h3>\n        <p>{user.name}</p>\n      </div>\n    </div>\n```"
+        "description": "## Add personalization in the MicroCard\n\nBring in a new version of MicroCard that uses the user elements.\n\n>> cp ../resources/MicroCardFinal.js src/components/MicroCard.js"
       },
       {
         "title": "Copy edit.js in",
         "description": "## Copy edit.js into functions\n\nWe'll use edit.js to follow/unfollow.  It will be similar to addData.js, with a couple of minor changes.\n\n>> cp /config/workspace/resources/edit.js /config/workspace/astra-tik-tok/functions"
+      },
+      {
+        "title": "Review edit.js",
+        "file": "astra-tik-tok/functions/edit.js",
+        "description": "Take a look at the edit.js file we'll be using for follow/unfollow."
+      },
+      {
+        "title": "Copy add.js in",
+        "description": "## Copy edit.js into functions\n\nWe'll use add.js to add videos.  It will be similar to addData.js, with a couple of minor changes.\n\n>> cp /config/workspace/resources/add.js /config/workspace/astra-tik-tok/functions"
+      },
+      {
+        "title": "Review add.js",
+        "description": "## Take a look at this function to see how uploads are handled.",
+        "file": "astra-tik-tok/functions/add.js"
       },
       {
         "file": "astra-tik-tok/src/pages/Home.js",
@@ -61,6 +75,20 @@
           }
         },
         "description": "## Check the implementation in Home.js\n\nIf userToToggle is set, this code toggles the following flag on or off."
+      },
+      {
+        "title": "Examine Upload.js",
+        "file": "astra-tik-tok/src/pages/Upload.js",
+        "description": "## Upload.js\n\nTake a look at this file, we'll talk about the various elements here.\n\n",
+        "line": 1
+      },
+      {
+        "title": "Check it out",
+        "description": "## Check your changes\n\nStart the server:\n\n>> netlify dev\n\nVisit the [home page](http://localhost:8888) of your site to make sure things are rendering appropriately.\n\nTry a few new things in the site:\n* Follow/unfollow to check that function\n* Upload a video\n* Check the new video on the home page."
+      },
+      {
+        "title": "Final Exam",
+        "description": "All done!\n\nVisit the [Final Exam](https://datastax.tahoe.appsembler.com/courses/course-v1:datastax+DSTEST+TRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/197eb7b0dd754c9790e44b0716957860/) for this course."
       }
     ]
   }

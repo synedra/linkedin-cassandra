@@ -10,34 +10,19 @@
     {
       "title": "Set up addData.js",
       "file": "astra-tik-tok/functions/addData.js",
-      "line": 151,
+      "line": 181,
       "description": "## Set up addData.js\nAdd the following code to your addData.js file.  This function will put a new entry into the database.\n\n```jsx\nconst { createClient } = require(\"@astrajs/collections\")\n\nconst collection = 'posts'\n\nexports.handler = async function (event, context, callback) {\n      const astraClient = await createClient({\n       astraDatabaseId: process.env.ASTRA_DB_ID,\n       astraDatabaseRegion: process.env.ASTRA_DB_REGION,\n       applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,\n     });\n\n  const posts = astraClient\n    .namespace(process.env.ASTRA_DB_KEYSPACE)\n    .collection(collection)\n\n  try {\n      await posts.create(\"a post\", {\n          title: \"my first post\",\n      })\n\n      return {\n          statusCode: 200,\n      }\n  } catch (e) {\n      console.error(e);\n      return {\n          statusCode: 500,\n          body: JSON.stringify(e),\n      }\n  }\n}    \n```"
     },
     {
       "title": "Set up post.js",
       "file": "astra-tik-tok/functions/post.js",
-      "line": 121,
+      "line": 151,
       "description": "## Set up post.js\n\nThis function is used to read the contents currently in the database.\n\n```jsx\nconst { createClient } = require(\"@astrajs/collections\")\n\nconst collection = 'posts'\n\nexports.handler = async function (event, context, callback) {\n  const astraClient = await createClient({\n       astraDatabaseId: process.env.ASTRA_DB_ID,\n       astraDatabaseRegion: process.env.ASTRA_DB_REGION,\n       applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,\n     });\n\n  const posts = astraClient\n    .namespace(process.env.ASTRA_DB_KEYSPACE)\n    .collection(collection)\n\n  try {\n      const res = await posts.find({})\n\n      return {\n          statusCode: 200,\n          body: JSON.stringify(res, null, 4)\n      }\n  } catch (e) {\n      console.error(e);\n      return {\n          statusCode: 500,\n          body: JSON.stringify(e),\n      }\n  }\n\n}\n```"
-    },
-    {
-      "file": "astra-tik-tok/functions/addData.js",
-      "selection": {
-        "start": {
-          "line": 1,
-          "character": 1
-        },
-        "end": {
-          "line": 31,
-          "character": 2
-        }
-      },
-      "description": "## Import data\n\nUpdate the addData.js file so that it pulls the data from the data.json file using the fs() function.\n\n```jsx\nconst fs = import('fs')\nconst { createClient } = require(\"@astrajs/collections\")\n\nconst collection = 'posts'\n\nexports.handler = async function (event, context, callback) {\n    const fs = require('fs')\n      const astraClient = await createClient({\n       astraDatabaseId: process.env.ASTRA_DB_ID,\n       astraDatabaseRegion: process.env.ASTRA_DB_REGION,\n       applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,\n     });\n\n  const posts = astraClient\n    .namespace(process.env.ASTRA_DB_KEYSPACE)\n    .collection(collection)\n\n  const data = JSON.parse(fs.readFileSync('/config/resources/data.json'))\n    \n  try {\n        for (let i = 0; i < data.length; i++) {\n          await posts.create(data[i].id.toString(), data[i])\n        }\n\n        return {\n            statusCode: 200,\n        }\n    } catch (e) {\n        console.error(e);\n        return {\n            statusCode: 500,\n            body: JSON.stringify(e),\n        }\n    }\n}  \n```",
-      "line": 102
     },
     {
       "title": "Set configuration in netlify.toml",
       "file": "astra-tik-tok/netlify.toml",
-      "line": 13,
+      "line": 16,
       "description": "## Set configuration in netlify.toml\n\n```jsx\n[build]\ncommand = \"npm run build\"\nfunctions = \"functions\"\npublish = \"build\"\n```"
     },
     {

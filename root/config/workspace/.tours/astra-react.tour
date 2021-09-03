@@ -20,7 +20,7 @@
         }
       },
       "description": "## Edit boilerplate React files\nFirst, we're going to make a few edits to the `create-react-app` boilerplate code. Let's start with `index.js`.\n\n---\n\n### Edit index.js\n\nYou won't be using the \"reportWebVitals\" function, so let's get rid of it entirely.\n\n```jsx\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.css';\nimport App from './App';\n\n\nReactDOM.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>,\n  document.getElementById('root')\n);\n```",
-      "line": 99
+      "line": 110
     },
     {
       "file": "astra-tik-tok/src/App.js",
@@ -36,7 +36,7 @@
         }
       },
       "description": "## App.js\nNext, we'll remove all the example content from our main file, `App.js`.\n\n---\n\n### Edit App.js\nReplace App.js content with the minimal component information.\n\n```jsx\nimport './App.css'\nconst App = () => {\n  return (\n    <div className=\"App\">\n    </div>\n  );\n}\nexport default App\n```\n",
-      "line": 77
+      "line": 84
     },
     {
       "title": "Install react-router-dom",
@@ -48,7 +48,7 @@
     {
       "file": "astra-tik-tok/src/App.js",
       "title": "Add react-router-dom to App.js",
-      "line": 3,
+      "line": 2,
       "description": "## Import Routing Library\n\nNow we need to import the `react-router` library to use in our app.\n\n---\n\nAdd the import statement for react-router-dom at the top of App.js\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\n\n```"
     },
     {
@@ -69,7 +69,7 @@
       },
       "title": "Add routing magic to App.js",
       "description": "## Add structure to App.js\n\nIt's time to get App.js ready to do some real work.\n\nYou'll be making a few changes with this:\n* Importing the HashRouter, Route and Switch components\n* Adding a `<Hashrouter>` at the top of your App component\n* In the `<Hashrouter>`, inserting a Switch component to direct queries to the right place\n* Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match \"wins\" so you can land in some frustration if you don't keep this in mind.\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\nimport Home from './pages/Home'\nimport Upload from './pages/Upload'\nimport './App.css'\n\nconst App = () => {\n  return (\n    <HashRouter>\n    <Switch>\n      <Route path= \"/upload\" component={Upload}/>\n      <Route path= \"/\" component={Home}/>\n    </Switch>\n  </HashRouter>\n  );\n}\n\nexport default App\n```",
-      "line": 176
+      "line": 192
     },
     {
       "title": "Adding content to components",
@@ -77,7 +77,7 @@
     },
     {
       "title": "Create components directory",
-      "description": "## Components setup\n\nHere, we'll create the directory for the application components, and create two component files, `Header.js` and `FollowersColumn.js`.\n\n>> mkdir /config/workspace/astra-tik-tok/src/components\n\n>> cp /config/workspace/resources/HeaderStart.js /config/workspace/astra-tik-tok/src/components/Header.js\n\n>> cp /config/workspace/resources/FollowersColumnStart.js /config/workspace/astra-tik-tok/src/components/FollowersColumn.js\n\nAlso bring in a file with basic styling for our initial setup.\n\n>> cp /config/workspace/resources/AppStart.css /config/workspace/astra-tik-tok/src/App.css\n"
+      "description": "## Components setup\n\nHere, we'll create the directory for the application components, and create two component files, `Header.js` and `FollowersColumn.js`.\n\n>> mkdir /config/workspace/astra-tik-tok/src/components\n\n>> cp /config/workspace/resources/HeaderStart.js /config/workspace/astra-tik-tok/src/components/Header.js\n\n>> cp /config/workspace/resources/FollowersColumnStart.js /config/workspace/astra-tik-tok/src/components/FollowersColumn.js\n\nAlso bring in a file with basic styling for our initial setup.\n\n>> cp /config/workspace/resources/AppStart.css /config/workspace/astra-tik-tok/src/App.css\n\nFinally, install the packages needed to make everything work.\n\n>> yarn add axios @astrajs/collections faker"
     },
     {
       "title": "Check Header file",
@@ -93,7 +93,7 @@
       "title": "Add Header to App.js",
       "file": "astra-tik-tok/src/App.js",
       "description": "# Import header into App.js\n\nLet's import our new components into `App.js` and use them.\n\n```jsx\nimport Header from './components/Header'\n```\n",
-      "line": 5
+      "line": 1
     },
     {
       "title": "Add a Header to the App component, under the <HashRouter> tag.",
@@ -103,8 +103,9 @@
     },
     {
       "title": "Style your components",
-      "description": "## Styling with CSS\n\nYou need to make your new components pretty.  We'll do this using CSS styles which we've already defined in our styled divs. For now, we're just going to get basic 'grey-box' styling in place. We'll improve the styling later.\n\n**Sections**\n* Add the flex styling to the container\n* Make the feed white\n* Make the suggested-box blue. \n* Set the background-color to yellow in the header class\n* Set css attributes for the .followers-column class",
-      "file": "astra-tik-tok/src/App.css"
+      "description": "## Styling with CSS\n\nYou need to make your new components pretty.  We'll do this using CSS styles which we've already defined in our styled divs. For now, we're just going to get basic 'grey-box' styling in place. We'll improve the styling later.\n\nLet's overwrite what's there with the components we want.\n\n>> cp /config/workspace/resources/AppStart.css /config/workspace/astra-tik-tok/src/App.css\n\n**Sections**\n* Add the flex styling to the container\n* Make the feed white\n* Make the suggested-box blue. \n* Set the background-color to yellow in the header class\n* Set css attributes for the .followers-column class",
+      "file": "astra-tik-tok/src/App.css",
+      "line": 1
     },
     {
       "file": "astra-tik-tok/src/pages/Home.js",
@@ -119,7 +120,7 @@
         }
       },
       "description": "## Customize Home.js\n\nLet's import our `FollowersColumn.js` component into our `Home.js` page and break up the page into sections using our new styles.\n\n```jsx\nimport FollowersColumn from '../components/FollowersColumn'\n\nconst Home = () => {\n\n  return (\n    <>\n      <div className='container'>\n        <FollowersColumn />\n        <div className='feed'>\n  \n        </div>\n        <div className=\"suggested-box\">\n          <div className=\"section\">\n            <div className=\"suggested\">\n              <h2 className=\"bold\">Suggested accounts</h2>\n              <div className=\"break\" />\n\n            </div>\n          </div>\n        </div>\n      </div>\n    </>\n  )\n}\n\nexport default Home\n```",
-      "line": 225
+      "line": 275
     },
     {
       "file": "astra-tik-tok/src/pages/Upload.js",
@@ -133,12 +134,16 @@
           "character": 2
         }
       },
-      "description": "## Add Functionality to Upload.js\n\nIn the `Upload.js` page, we'll throw together a simple form that can be filled out. For now there will be plenty of filler information.\n\n```jsx\nimport React, { useState } from 'react'\n\n\nconst Upload = () => {\n  const username = 'aniak100'\n  const name = 'Ania Kubow'\n  const avatar = 'https://i.imgur.com/QwZod6m.png'\n\n  return (\n    <div className=\"upload-page\">\n        <br />\n        <h1>Upload video</h1>\n        <p>This video will be published to @{username}</p>\n        <div className='container'>\n          <form>\n            <div className='section'>\n              <div className=\"image-upload\"></div>\n              <div className=\"form-section\">\n                <div className='section input-section'>\n                  <label className=\"bold\">Caption</label>\n                  <input\n                    className='input'\n                    name='caption'\n                  />\n                </div>\n                <div className=\"break\"></div>\n                <div className='section input-section'>\n                  <label className=\"bold\">Video Url</label>\n                  <input\n                    className='input'\n                    name='video'\n                  />\n                </div>\n              </div>\n            </div>\t\t\t\n            <button>Post</button>\n          </form>\n        </div>\n    </div>\n  )\n}\n\nexport default Upload\n```",
-      "line": 294
+      "description": "## Add Functionality to Upload.js\n\nIn the `Upload.js` page, we'll throw together a simple form that can be filled out. For now there will be plenty of filler information.\n\n>> cp /config/workspace/resources/Upload.js /config/workspace/astra-tik-tok/src/pages",
+      "line": 336
     },
     {
       "title": "Start the server",
       "description": "## Start the Development Server\n\nCongrats! We now have a basic framework of our app. Let's run the dev server and take a look.\n\n>> yarn start\n\n[Visit your site](http://localhost:3000)\n\nWhen you're done, press Ctrl-C in the terminal to stop the process so we can move to the next piece."
+    },
+    {
+      "title": "React Knowledge Check",
+      "description": "Visit the [Knowledge Check](https://datastax.tahoe.appsembler.com/courses/course-v1:datastax+DSTEST+TRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/679cb5ad641e415d8f0f0fb19319b196/) for this section to make sure everything's clear.  See you when you get back!"
     }
   ]
 }
