@@ -18,7 +18,7 @@ const Home = () => {
 
   //fetch all the tik-tok posts to your feed
   const fetchData = async () => {
-    const results = await axios.get('/.netlify/functions/posts')
+    const results = await axios.get('/.netlify/functions/post')
     console.log(results.data)
     setUsers(results.data)
   }

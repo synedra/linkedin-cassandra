@@ -10,24 +10,24 @@
     {
       "title": "Set up addData.js",
       "file": "astra-tik-tok/functions/addData.js",
-      "line": 211,
-      "description": "## Set up addData.js\nAdd the following code to your addData.js file.  This function will put a new entry into the database.\n\n```jsx\nconst { createClient } = require(\"@astrajs/collections\")\n\nconst collection = 'posts'\n\nexports.handler = async function (event, context, callback) {\n      const astraClient = await createClient({\n       astraDatabaseId: process.env.ASTRA_DB_ID,\n       astraDatabaseRegion: process.env.ASTRA_DB_REGION,\n       applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,\n     });\n\n  const posts = astraClient\n    .namespace(process.env.ASTRA_DB_KEYSPACE)\n    .collection(collection)\n\n  try {\n      await posts.create(\"a post\", {\n          title: \"my first post\",\n      })\n\n      return {\n          statusCode: 200,\n      }\n  } catch (e) {\n      console.error(e);\n      return {\n          statusCode: 500,\n          body: JSON.stringify(e),\n      }\n  }\n}    \n```"
+      "line": 335,
+      "description": "## Set up addData.js\nAdd the following code to your addData.js file.  This function will put a new entry into the database.\n\n```jsx\nconst fs = require (\"fs\")\n\nconst { createClient } = require(\"@astrajs/collections\")\n\nconst collection = 'posts'\n\nexports.handler = async function (event, context, callback) {\n      const astraClient = await createClient({\n       astraDatabaseId: process.env.ASTRA_DB_ID,\n       astraDatabaseRegion: process.env.ASTRA_DB_REGION,\n       applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,\n     });\n\n  const posts = astraClient\n    .namespace(process.env.ASTRA_DB_KEYSPACE)\n    .collection(collection)\n\n  try {\n      await posts.create(\"a post\", {\n          title: \"my first post\",\n      })\n\n      return {\n          statusCode: 200,\n      }\n  } catch (e) {\n      console.error(e);\n      return {\n          statusCode: 500,\n          body: JSON.stringify(e),\n      }\n  }\n}    \n```"
     },
     {
       "title": "Set up post.js",
       "file": "astra-tik-tok/functions/post.js",
-      "line": 181,
+      "line": 301,
       "description": "## Set up post.js\n\nThis function is used to read the contents currently in the database.\n\n```jsx\nconst { createClient } = require(\"@astrajs/collections\")\n\nconst collection = 'posts'\n\nexports.handler = async function (event, context, callback) {\n  const astraClient = await createClient({\n       astraDatabaseId: process.env.ASTRA_DB_ID,\n       astraDatabaseRegion: process.env.ASTRA_DB_REGION,\n       applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,\n     });\n\n  const posts = astraClient\n    .namespace(process.env.ASTRA_DB_KEYSPACE)\n    .collection(collection)\n\n  try {\n      const res = await posts.find({})\n\n      return {\n          statusCode: 200,\n          body: JSON.stringify(res, null, 4)\n      }\n  } catch (e) {\n      console.error(e);\n      return {\n          statusCode: 500,\n          body: JSON.stringify(e),\n      }\n  }\n\n}\n```"
     },
     {
       "title": "Set configuration in netlify.toml",
       "file": "astra-tik-tok/netlify.toml",
-      "line": 19,
+      "line": 31,
       "description": "## Set configuration in netlify.toml\n\n```jsx\n[build]\ncommand = \"npm run build\"\nfunctions = \"functions\"\npublish = \"build\"\n```"
     },
     {
-      "title": "Test new functions",
-      "description": "## Test new functions\n\n>> netlify dev\n\n[Open addData](http://0.0.0.0:8888/.netlify/functions/addData)\n\n[Open post](http://0.0.0.0:8888/.netlify/functions/post)"
+      "title": "Functions Knowledge Check",
+      "description": "Visit the [Knowledge Check](https://datastax.tahoe.appsembler.com/courses/course-v1:datastax+DSTEST+TRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/7c0a52a222414f54a365568b34336fb2/) for this section to make sure everything's clear.  See you when you get back!"
     }
   ]
 }

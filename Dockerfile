@@ -9,6 +9,7 @@ ENV SUDO_PASSWORD=password
 
 RUN chown -R abc:abc /usr/lib/node_modules
 RUN chmod 777 /usr/bin
+RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 
 # Pull in repo
 RUN git clone https://github.com/synedra/appdev-week2-tiktok /opt/workspace/tik-tok
@@ -25,6 +26,7 @@ RUN echo "then" >> /opt/workspace/.bashrc
 RUN echo "  cd /config/workspace/astra-tik-tok" >> /opt/workspace/.bashrc
 RUN echo "fi" >> /opt/workspace/.bashrc
 RUN echo "alias git-remote=\"/bin/bash /config/workspace/resources/git-remote\"" >> /opt/workspace/.bashrc
+RUN echo "alias netlify-site=\"/bin/bash /config/workspace/resources/netlify-site\"" >> /opt/workspace/.bashrc
 
 USER root
 COPY /root /

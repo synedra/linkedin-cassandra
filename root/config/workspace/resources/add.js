@@ -1,18 +1,18 @@
+const faker = require("faker");
 const { getCollection } = require("./utils/astraClient");
+
+let id = faker.datatype.uuid();
 
 exports.handler = async function (event) {
   const users = await getCollection();
-  const body = JSON.parse(event.body);
-
   try {
-    let response = await users.update(body.userId, body.data);
-    console.log(response)
+    const user = await users.create(id, event.body);
     return {
       statusCode: 200,
+      body: JSON.stringify(user),
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(body.userId)
     };
   } catch (e) {
     console.error(e);

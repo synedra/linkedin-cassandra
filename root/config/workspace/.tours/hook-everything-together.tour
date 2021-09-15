@@ -5,7 +5,7 @@
   "steps": [
     {
       "title": "Copy Card Components into the workspace",
-      "description": "## Copy Card Component Files\n\n>> cd /config/workspace/astra-tik-tok\n\nUpdate your main components.\n\n>> cp /config/workspace/resources/Card.js src/components\n\n>> cp /config/workspace/resources/MiniCard.js src/components\n\n>> cp /config/workspace/resources/MicroCard.js src/components\n\n>> cp /config/workspace/resources/FollowersColumn.js src/components\n\n>> cp /config/workspace/resources/Header.js src/components\n\nNext, pull in styling for the new components\n\n>> cp /config/workspace/resources/App.css src/App.css\n\nGrab your Home page\n\n>> cp /config/workspace/resources/HomeFinal.js src/pages/Home.js\n\nAnd finally, your main page.\n\n>> cp /opt/workspace/tik-tok/public/index.html public\n"
+      "description": "## Copy Card Component Files\n\nUpdate your main components.\n\n>> cp /config/workspace/resources/Card.js src/components\n\n>> cp /config/workspace/resources/MiniCard.js src/components\n\n>> cp /config/workspace/resources/MicroCard.js src/components\n\n>> cp /config/workspace/resources/FollowersColumn.js src/components\n\n>> cp /config/workspace/resources/Header.js src/components\n\nNext, pull in styling for the new components\n\n>> cp /config/workspace/resources/AppFinal.css src/App.css\n\nGrab your Home page\n\n>> cp /config/workspace/resources/HomeFinal.js src/pages/Home.js\n\nThen, your main page.\n\n>> cp /opt/workspace/tik-tok/public/index.html public\n\nMove the App component from App.js into index.js\n\n>> cp /config/workspace/resources/index.js /config/workspace/astra-tik-tok/src\n\n>> rm  /config/workspace/astra-tik-tok/src/App.js\n"
     },
     {
       "title": "Review Home.js",
@@ -134,7 +134,7 @@
     },
     {
       "title": "Check your changes",
-      "description": "## Check your changes\n\nStart the server:\n\n>> netlify dev\n\nVisit the [home page](http://localhost:8888) of your site to make sure things are rendering appropriately."
+      "description": "## Check your changes\n\nStart the server:\n\nPush your changes\n\n>> git add -A\n\n>> git commit -a -m \"Adding items to hook together.\"\n\n>> git push origin main\n\n\n\nVisit the [home page](https://adoring-golick-98d83c.netlify.app/) of your site to make sure things are rendering appropriately."
     },
     {
       "title": "Hook Everything Together Knowledge Check",

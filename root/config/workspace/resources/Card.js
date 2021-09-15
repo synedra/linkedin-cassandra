@@ -3,14 +3,17 @@ import React from 'react'
 const Card = ({ user, toggleFollow }) => {
 
   const timestamp = user.timestamp
-  const timeStampReformat = timestamp.slice(2, 7)
+  let timeStampReformat
+  if (timestamp) {
+    timeStampReformat = timestamp.slice(2, 7)
+  }
 
   return (
     <div className="card">
       <div className="break" />
         <div className="section">
           <div className="user-info">
-            <img className="user-profile"  src={user.avatar} width={'100%'} />
+            <img className="user-profile" alt="User Profile" src={user.avatar} width={'100%'} />
             <div>
             <div className="section">
               <h3 className="bold">{user.username}</h3>
@@ -29,11 +32,11 @@ const Card = ({ user, toggleFollow }) => {
           <source src={user.video} type="video/mp4" />
         </video>
         <div className="section socials">
-           <i class="far fa-heart"></i>
+           <i className="far fa-heart"></i>
           <div className="social-tag">{user.likes}</div>
-          <i class="far fa-comment-dots"></i>
+          <i className="far fa-comment-dots"></i>
           <div className="social-tag">{user.comments}</div>
-          <i class="far fa-share-square"></i>
+          <i className="far fa-share-square"></i>
         </div>
     </div>
   )

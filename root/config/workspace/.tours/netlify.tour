@@ -17,6 +17,10 @@
     {
       "title": "Create Netlify Site",
       "description": "# Create Netlify Site\n\nIn this step, you'll create a new Netlify site based on your github repository.\n\nFirst, [visit Netlify](https://www.netlify.com) and create a new account or login.\n\nNext, select \"New Site from Git\", and follow the prompts to find and select your new repository on Github.\n\nOnce you've done this, you can connect your workspace to the Netlify site.  \n\nLink the site you created with your Netlify site.  The first choice (same repository as Netlify) will work correctly\n\n>> netlify link\n\nYou'll need to copy/paste the URL into a new browser tab, as this system doesn't launch external browsers for you.\n\nAnd then you will take your environment variables and send them to Netlify so your site can be hosted.\n\n>> netlify env:import .env\n\nBuild your site to get it ready to deploy.\n\n>> netlify build\n\nDeploy to production (just because this is a demo!)\n\n>> netlify deploy -p\n\nCheck the information for your current site with the following command, then command-click or right-click the site URL to visit your site.\n\n>> netlify status"
+    },
+    {
+      "title": "Netlify Knowledge Check",
+      "description": "Visit the [Knowledge Check](https://datastax.tahoe.appsembler.com/courses/course-v1:datastax+DSTEST+TRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/8e9d5a1e810f48f39d29e63dcd2ca2cc/) for this section to make sure everything's clear.  See you when you get back!"
     }
   ]
 }
