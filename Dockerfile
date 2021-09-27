@@ -110,15 +110,14 @@ RUN git clone https://github.com/synedra/appdev-week2-tiktok /opt/workspace/tik-
 RUN chown -R gitpod /opt/workspace
 
 USER gitpod
-ENV HOME=/opt/workspace
 WORKDIR /opt/workspace/tik-tok
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
 RUN unset HOME
-RUN echo "if test -d \"/config/workspace/astra-tik-tok\"" >> /opt/workspace/.bashrc
-RUN echo "then" >> /opt/workspace/.bashrc
-RUN echo "  cd /config/workspace/astra-tik-tok" >> /opt/workspace/.bashrc
+RUN echo "if test -d \"/config/workspace/astra-tik-tok\"" >> /home/gitpod/.bashrc
+RUN echo "then" >> /home/github/.bashrc
+RUN echo "  cd /config/workspace/astra-tik-tok" >> /home/github/.bashrc
 RUN echo "fi" >> /opt/workspace/.bashrc
-RUN echo "alias git-remote=\"/bin/bash /config/workspace/resources/git-remote\"" >> /opt/workspace/.bashrc
-RUN echo "alias netlify-site=\"/bin/bash /config/workspace/resources/netlify-site\"" >> /opt/workspace/.bashrc
+RUN echo "alias git-remote=\"/bin/bash /config/workspace/resources/git-remote\"" >> /home/gitpod/.bashrc
+RUN echo "alias netlify-site=\"/bin/bash /config/workspace/resources/netlify-site\"" >> /home/gitpod/.bashrc
 COPY /root /home/gitpod/.gitpod-code
