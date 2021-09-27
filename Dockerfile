@@ -82,14 +82,6 @@ RUN patch -u /etc/s6/init/init-stage2 -i /tmp/patch/etc/s6/init/init-stage2.patc
 
 RUN rm -rf /var/lib/apt/lists/*
 
-# environment settings
-#curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - &&\
-# echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list &&\
-RUN npm install -g yarn
-RUN  yarn config set network-timeout 600000 -g 
-RUN  yarn --verbose global add code-server
-RUN  yarn cache clean
-
 RUN dpkg-divert --local --rename --add /sbin/initctl && \
  cp -a \
 	/usr/sbin/policy-rc.d \
@@ -110,14 +102,14 @@ RUN git clone https://github.com/synedra/appdev-week2-tiktok /opt/workspace/tik-
 RUN chown -R gitpod /opt/workspace
 
 USER gitpod
-WORKDIR /opt/workspace/tik-tok
+WORKDIR /config/workspace/tik-tok
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
-RUN unset HOME
 RUN echo "if test -d \"/config/workspace/astra-tik-tok\"" >> /home/gitpod/.bashrc
-RUN echo "then" >> /home/github/.bashrc
-RUN echo "  cd /config/workspace/astra-tik-tok" >> /home/github/.bashrc
-RUN echo "fi" >> /opt/workspace/.bashrc
+RUN echo "then" >> /home/gitpod/.bashrc
+RUN echo "  cd /config/workspace/astra-tik-tok" >> /home/gitpod/.bashrc
+RUN echo "fi" >> /home/gitpod/.bashrc
 RUN echo "alias git-remote=\"/bin/bash /config/workspace/resources/git-remote\"" >> /home/gitpod/.bashrc
 RUN echo "alias netlify-site=\"/bin/bash /config/workspace/resources/netlify-site\"" >> /home/gitpod/.bashrc
-COPY /root /home/gitpod/.gitpod-code
+COPY /root /tmp
+RUN echo "cp -r /tmp/ /home/gitpod/.gitpod-code" >> /home/gitpod/.bashrc
