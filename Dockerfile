@@ -105,10 +105,10 @@ USER gitpod
 WORKDIR /config/workspace/tik-tok
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
-RUN echo "if test -d \"/config/workspace/astra-tik-tok\"" >> /home/gitpod/.bashrc
-RUN echo "then" >> /home/gitpod/.bashrc
-RUN echo "  cd /config/workspace/astra-tik-tok" >> /home/gitpod/.bashrc
-RUN echo "fi" >> /home/gitpod/.bashrc
-RUN echo "alias git-remote=\"/bin/bash /config/workspace/resources/git-remote\"" >> /home/gitpod/.bashrc
-RUN echo "alias netlify-site=\"/bin/bash /config/workspace/resources/netlify-site\"" >> /home/gitpod/.bashrc
+RUN echo "if test -d \"/config/workspace/astra-tik-tok\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "then" >> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "  cd /config/workspace/astra-tik-tok" >> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "fi" >> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "alias git-remote=\"/bin/bash /config/workspace/resources/git-remote\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "alias netlify-site=\"/bin/bash /config/workspace/resources/netlify-site\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
 COPY /root /home/gitpod
