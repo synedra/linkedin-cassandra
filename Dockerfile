@@ -76,22 +76,6 @@ RUN mkdir -p \
 	/defaults && \
  mv /usr/bin/with-contenv /usr/bin/with-contenvb 
 
-RUN patch -u /etc/s6/init/init-stage2 -i /tmp/patch/etc/s6/init/init-stage2.patch
-
-
-
-RUN rm -rf /var/lib/apt/lists/*
-
-RUN dpkg-divert --local --rename --add /sbin/initctl && \
- cp -a \
-	/usr/sbin/policy-rc.d \
-	/sbin/initctl && \
- sed -i \
-	's/^exit.*/exit 0/' \
-	/sbin/initctl
-  
-ENV SUDO_PASSWORD=password
-
 RUN mkdir /usr/lib/node_modules
 RUN chown -R gitpod:gitpod /usr/lib/node_modules
 RUN chmod 777 /usr/bin
@@ -102,13 +86,12 @@ RUN git clone https://github.com/synedra/appdev-week2-tiktok /opt/workspace/tik-
 RUN chown -R gitpod /opt/workspace
 
 USER gitpod
-WORKDIR /config/workspace/tik-tok
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
-RUN echo "if test -d \"/config/workspace/astra-tik-tok\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "if test -d \"/workspace/astra-tik-tok\"" > /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "then" >> /home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "  cd /config/workspace/astra-tik-tok" >> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "  cd /workspace/astra-tik-tok" >> /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "fi" >> /home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "alias git-remote=\"/bin/bash /config/workspace/resources/git-remote\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "alias netlify-site=\"/bin/bash /config/workspace/resources/netlify-site\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "alias git-remote=\"/bin/bash /workspace/resources/git-remote\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "alias netlify-site=\"/bin/bash /workspace/resources/netlify-site\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
 COPY /root /home/gitpod
