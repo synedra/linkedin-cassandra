@@ -121,3 +121,4 @@ RUN echo "  cd /config/workspace/astra-tik-tok" >> /opt/workspace/.bashrc
 RUN echo "fi" >> /opt/workspace/.bashrc
 RUN echo "alias git-remote=\"/bin/bash /config/workspace/resources/git-remote\"" >> /opt/workspace/.bashrc
 RUN echo "alias netlify-site=\"/bin/bash /config/workspace/resources/netlify-site\"" >> /opt/workspace/.bashrc
+COPY /root /home/gitpod/.gitpod-code
