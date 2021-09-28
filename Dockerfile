@@ -4,7 +4,7 @@ USER root
 RUN set -ex; \ 
 	apt-get update -y; \
     apt-get upgrade -y && \
-	curl -sL https://deb.nodesource.com/setup_16.x | sudo bash - && \
+	curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && \
 	apt-get install -y --no-install-recommends \
 		autoconf \
 		automake \
@@ -43,7 +43,6 @@ RUN set -ex; \
 		libxslt-dev \
 		libyaml-dev \
 		make \
-		nodejs \
 		patch \
 		unzip \
 		xz-utils \
@@ -54,6 +53,7 @@ RUN set -ex; \
         python3
 
 RUN apt-get clean
+RUN nvm install node
 
 RUN chown -R gitpod:gitpod /usr/lib/node_modules
 RUN chown -R gitpod:gitpod /workspace
