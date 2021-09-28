@@ -71,11 +71,11 @@ USER gitpod
 WORKDIR /workspace
 COPY /root .
 
-RUN echo "cd /workspace"> /home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "if test -d \"/workspace/astra-tik-tok\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "then" >> /home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "  cd /workspace/astra-tik-tok" >> /home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "fi" >> /home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "alias git-remote=\"/bin/bash /workspace/resources/git-remote\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "alias netlify-site=\"/bin/bash /workspace/resources/netlify-site\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "cd /workspace"> ../../home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "if test -d \"/workspace/astra-tik-tok\"" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "then" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "  cd /workspace/astra-tik-tok" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "fi" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "alias git-remote=\"/bin/bash /workspace/resources/git-remote\"" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "alias netlify-site=\"/bin/bash /workspace/resources/netlify-site\"" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
 
