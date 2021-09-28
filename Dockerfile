@@ -4,7 +4,7 @@ USER root
 RUN set -ex; \ 
 	apt-get update -y; \
     apt-get upgrade -y && \
-	curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && \
+	curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash - && \
 	apt-get install -y --no-install-recommends \
 		autoconf \
 		automake \
