@@ -98,9 +98,18 @@ fi
 #    . /etc/bash_completion
 #fi
 
-alias astra-setup="node /config/workspace/tik-tok/node_modules/.bin/astra-setup"
-alias netlify="node /config/workspace/tik-tok/node_modules/.bin/netlify"
 
 export PATH="${PATH}:/opt/bin" 
+
+cd /workspace
+if test -d /workspace/astra-tik-tok
+then
+    cd /workspace/astra-tik-tok
+fi
+alias astra-setup="node /config/workspace/tik-tok/node_modules/.bin/astra-setup"
+alias netlify="node /config/workspace/tik-tok/node_modules/.bin/netlify"
+alias git-remote="/bin/bash /workspace/resources/git-remote"
+alias netlify-site="/bin/bash /workspace/resources/netlify-site"
+
 
 

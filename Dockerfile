@@ -69,15 +69,5 @@ RUN usermod -d /gitpod gitpod
 RUN ls /
 # Pull in repo
 USER gitpod
-WORKDIR /workspace/appsembler-tiktok/gitpod
-ENV HOME=/workspace
 
-RUN echo "cd /workspace"> .bashrc
-RUN echo "if test -d \"/workspace/astra-tik-tok\"" >> .bashrc
-RUN echo "then" >> .bashrc
-RUN echo "  cd /workspace/astra-tik-tok" >> .bashr
-RUN echo "fi" >> .bashrc
-RUN echo "alias git-remote=\"/bin/bash /workspace/resources/git-remote\"" >> .bashrc
-RUN echo "alias netlify-site=\"/bin/bash /workspace/resources/netlify-site\"" >> .bashrc
-
-ENTRYPOINT ["echo 'WOO' > myfile"]
+ENTRYPOINT ["/bin/bash root/config/setup.sh"]
