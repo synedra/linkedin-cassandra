@@ -67,5 +67,5 @@ RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
 # Pull in repo
 USER gitpod
-
-ENTRYPOINT ["/bin/bash /workspace/appsembler-tiktok/root/config/setup.sh"]
+COPY /workspace/appsembler-tiktok/root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
+COPY /root/config/* /home/gitpod/.gitpod-code
