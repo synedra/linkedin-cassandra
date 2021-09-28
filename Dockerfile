@@ -65,18 +65,18 @@ RUN chmod 777 /usr/bin
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
-
+RUN usermod -d /workspace gitpod 
+RUN ls /
 # Pull in repo
 USER gitpod
 WORKDIR /workspace
 ENV HOME=/workspace
 RUN cp -r /home/gitpod /workspace/gitpod
 
-RUN echo "cd /workspace"> gitpod/.bashrc.d/999-datatax.rc
-RUN echo "if test -d \"/workspace/astra-tik-tok\"" >> gitpod/.bashrc.d/999-datatax.rc
-RUN echo "then" >> gitpod/.bashrc.d/999-datatax.rc
-RUN echo "  cd /workspace/astra-tik-tok" >> gitpod/.bashrc.d/999-datatax.rc
-RUN echo "fi" >> gitpod/.bashrc.d/999-datatax.rc
-RUN echo "alias git-remote=\"/bin/bash /workspace/resources/git-remote\"" >> gitpod/.bashrc.d/999-datatax.rc
-RUN echo "alias netlify-site=\"/bin/bash /workspace/resources/netlify-site\"" >> gitpod/.bashrc.d/999-datatax.rc
-
+RUN echo "cd /workspace"> .bashrc
+RUN echo "if test -d \"/workspace/astra-tik-tok\"" >> .bashrc
+RUN echo "then" >> .bashrc
+RUN echo "  cd /workspace/astra-tik-tok" >> .bashrc
+RUN echo "fi" >> .bashrc
+RUN echo "alias git-remote=\"/bin/bash /workspace/resources/git-remote\"" >> .bashrc
+RUN echo "alias netlify-site=\"/bin/bash /workspace/resources/netlify-site\"" >> .bashrc
