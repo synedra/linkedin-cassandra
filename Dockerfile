@@ -68,4 +68,4 @@ RUN pip3 install httpie-astra
 # Pull in repo
 USER gitpod
 COPY /workspace/appsembler-tiktok/root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-COPY /root/config/* /home/gitpod/.gitpod-code
+COPY /root/config/extensions/* /home/gitpod/.gitpod-code/extensions

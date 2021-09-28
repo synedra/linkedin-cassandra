@@ -1,4 +1,1 @@
-tasks:
-  - name: Startup
-    init: |
-      /bin/bash /workspace/appsembler-tiktok/root/config/setup.sh
+image: synedra/dockertiktok
