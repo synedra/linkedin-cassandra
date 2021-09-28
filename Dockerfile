@@ -65,9 +65,7 @@ RUN chmod 777 /usr/bin
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
-RUN usermod -d /gitpod gitpod 
-RUN ls /
 # Pull in repo
 USER gitpod
 
-ENTRYPOINT ["/bin/bash root/config/setup.sh"]
+ENTRYPOINT ["/bin/bash /root/config/setup.sh"]
