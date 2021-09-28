@@ -1,1 +1,2 @@
-image: synedra/dockertiktok
+image:
+  file: Dockerfile
