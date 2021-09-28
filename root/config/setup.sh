@@ -2,4 +2,4 @@
 
 mkdir /home/gitpod/.vscode
 cp -r /workspace/appsembler-tiktok/root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-cp -r /workspace/appsembler-tiktok/root/config/ /home/gitpod/.vscode/extensions
+cp -r /workspace/appsembler-tiktok/root/config/extensions /home/gitpod/.gitpod-code/extensions
