@@ -69,6 +69,7 @@ RUN pip3 install httpie-astra
 # Pull in repo
 USER gitpod
 WORKDIR /workspace
+ENV HOME=/workspace
 COPY /root .
 
 RUN echo "cd /workspace"> ../../home/gitpod/.bashrc.d/999-datatax.rc
