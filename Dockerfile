@@ -68,7 +68,8 @@ RUN pip3 install httpie-astra
 
 # Pull in repo
 USER gitpod
-COPY /root /workspace
+WORKDIR /workspace
+COPY /root .
 
 RUN echo "if test -d \"/workspace/astra-tik-tok\"" > /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "then" >> /home/gitpod/.bashrc.d/999-datatax.rc
