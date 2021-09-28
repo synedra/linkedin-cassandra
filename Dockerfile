@@ -70,13 +70,13 @@ RUN pip3 install httpie-astra
 USER gitpod
 WORKDIR /workspace
 ENV HOME=/workspace
-COPY /root .
+RUN cp -r /home/gitpod /workspace/gitpod
 
-RUN echo "cd /workspace"> ../../home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "if test -d \"/workspace/astra-tik-tok\"" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "then" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "  cd /workspace/astra-tik-tok" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "fi" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "alias git-remote=\"/bin/bash /root/workspace/resources/git-remote\"" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
-RUN echo "alias netlify-site=\"/bin/bash /root/workspace/resources/netlify-site\"" >> ../../home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "cd /workspace"> gitpod/.bashrc.d/999-datatax.rc
+RUN echo "if test -d \"/workspace/astra-tik-tok\"" >> gitpod/.bashrc.d/999-datatax.rc
+RUN echo "then" >> gitpod/.bashrc.d/999-datatax.rc
+RUN echo "  cd /workspace/astra-tik-tok" >> gitpod/.bashrc.d/999-datatax.rc
+RUN echo "fi" >> gitpod/.bashrc.d/999-datatax.rc
+RUN echo "alias git-remote=\"/bin/bash /workspace/resources/git-remote\"" >> gitpod/.bashrc.d/999-datatax.rc
+RUN echo "alias netlify-site=\"/bin/bash /workspace/resources/netlify-site\"" >> gitpod/.bashrc.d/999-datatax.rc
 
