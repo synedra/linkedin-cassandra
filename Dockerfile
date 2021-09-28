@@ -1,29 +1,14 @@
-FROM linuxserver/code-server AS builder
-
 FROM gitpod/workspace-full:latest
 
 USER root
-COPY --from=builder /init /init
-COPY /root/patch /tmp/patch
-
-
-# set version for s6 overlay
-ARG OVERLAY_VERSION="v2.2.0.3"
-ARG OVERLAY_ARCH="amd64"
-
-# add s6 overlay
-ADD https://github.com/just-containers/s6-overlay/releases/download/${OVERLAY_VERSION}/s6-overlay-${OVERLAY_ARCH}-installer /tmp/
-RUN chmod +x /tmp/s6-overlay-${OVERLAY_ARCH}-installer && /tmp/s6-overlay-${OVERLAY_ARCH}-installer / && rm /tmp/s6-overlay-${OVERLAY_ARCH}-installer
-
-# apt-get install
-
-
-RUN set -ex; \
-	apt-get update; \
+RUN set -ex; \ 
+	apt-get update -y; \
     apt-get upgrade -y && \
+	curl -sL https://deb.nodesource.com/setup_16.x | sudo bash - && \
 	apt-get install -y --no-install-recommends \
 		autoconf \
 		automake \
+		build-essential \
 		bzip2 \
 		dpkg-dev \
 		file \
@@ -58,6 +43,7 @@ RUN set -ex; \
 		libxslt-dev \
 		libyaml-dev \
 		make \
+		nodejs \
 		patch \
 		unzip \
 		xz-utils \
@@ -69,29 +55,25 @@ RUN set -ex; \
 
 RUN apt-get clean
 
-RUN mkdir -p \
-	/app \
-    /patch \
-    /config \
-	/defaults && \
- mv /usr/bin/with-contenv /usr/bin/with-contenvb 
-
-RUN mkdir /usr/lib/node_modules
 RUN chown -R gitpod:gitpod /usr/lib/node_modules
+RUN chown -R gitpod:gitpod /workspace
+RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok
+
+WORKDIR /workspace/tik-tok
+
 RUN chmod 777 /usr/bin
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
-
-# Pull in repo
-RUN git clone https://github.com/synedra/appdev-week2-tiktok /opt/workspace/tik-tok
-RUN chown -R gitpod /opt/workspace
-
-USER gitpod
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
+
+# Pull in repo
+USER gitpod
+COPY /root /workspace
+
 RUN echo "if test -d \"/workspace/astra-tik-tok\"" > /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "then" >> /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "  cd /workspace/astra-tik-tok" >> /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "fi" >> /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "alias git-remote=\"/bin/bash /workspace/resources/git-remote\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "alias netlify-site=\"/bin/bash /workspace/resources/netlify-site\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
-COPY /root /home/gitpod
+
