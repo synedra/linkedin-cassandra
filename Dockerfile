@@ -65,18 +65,19 @@ RUN chmod 777 /usr/bin
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
-RUN usermod -d /workspace gitpod 
+RUN usermod -d /gitpod gitpod 
 RUN ls /
 # Pull in repo
 USER gitpod
-WORKDIR /workspace
+WORKDIR /workspace/appsembler-tiktok/gitpod
 ENV HOME=/workspace
-RUN cp -r /home/gitpod /workspace/gitpod
 
 RUN echo "cd /workspace"> .bashrc
 RUN echo "if test -d \"/workspace/astra-tik-tok\"" >> .bashrc
 RUN echo "then" >> .bashrc
-RUN echo "  cd /workspace/astra-tik-tok" >> .bashrc
+RUN echo "  cd /workspace/astra-tik-tok" >> .bashr
 RUN echo "fi" >> .bashrc
 RUN echo "alias git-remote=\"/bin/bash /workspace/resources/git-remote\"" >> .bashrc
 RUN echo "alias netlify-site=\"/bin/bash /workspace/resources/netlify-site\"" >> .bashrc
+
+ENTRYPOINT ["echo 'WOO' > myfile"]
