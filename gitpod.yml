@@ -1,0 +1,3 @@
+tasks:
+  - name: Static Server
+    before: /bin/bash /workspace/appsembler-tiktok/root/config/setup.sh
