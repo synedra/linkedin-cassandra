@@ -71,7 +71,8 @@ USER gitpod
 WORKDIR /workspace
 COPY /root .
 
-RUN echo "if test -d \"/workspace/astra-tik-tok\"" > /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "cd /workspace"> /home/gitpod/.bashrc.d/999-datatax.rc
+RUN echo "if test -d \"/workspace/astra-tik-tok\"" >> /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "then" >> /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "  cd /workspace/astra-tik-tok" >> /home/gitpod/.bashrc.d/999-datatax.rc
 RUN echo "fi" >> /home/gitpod/.bashrc.d/999-datatax.rc
