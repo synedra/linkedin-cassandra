@@ -68,4 +68,4 @@ RUN pip3 install httpie-astra
 # Pull in repo
 USER gitpod
 
-ENTRYPOINT ["/bin/bash /root/config/setup.sh"]
+ENTRYPOINT ["/bin/bash /workspace/appsembler-tiktok/root/config/setup.sh"]
