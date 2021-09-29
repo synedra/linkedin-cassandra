@@ -70,7 +70,9 @@ RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok-
 
 RUN mkdir -p /home/gitpod/.gitpod-code/extensions
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-COPY --chown=gitpod:gitpod /root/config/* /home/gitpod/.gitpod-code/
+COPY --chown=gitpod:gitpod /root/config/extensions/* /home/gitpod/.gitpod-code/extensions/
+COPY --chown=gitpod:gitpod /root/config/data/* /home/gitpod/.gitpod-code/data/
+COPY --chown=gitpod:gitpod /root/config/workspace /home/gitpod/.gitpod-code/
 
 EXPOSE 8888
 EXPOSE 8443
