@@ -66,4 +66,4 @@ USER gitpod
 
 RUN mkdir -p /home/gitpod/.gitpod-code/extensions
 COPY /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-COPY /root/config/extensions/* /home/gitpod/.gitpod-code/extensions
+COPY /root/config/* /home/gitpod/.gitpod-code/
