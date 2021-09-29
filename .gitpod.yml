@@ -1,5 +1,5 @@
 image:
-  file: Dockerfilefix
+  file: Dockerfile
 
 tasks:
   - name: tiktok
