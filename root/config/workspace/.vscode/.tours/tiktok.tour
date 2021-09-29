@@ -1,0 +1,10 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Tiktok",
+  "steps": [
+    {
+      "title": "Astra configuration",
+      "description": "[Open URL](https://astra.datastax.com)\n>> npm exec astra-setup"
+    }
+  ]
+}
