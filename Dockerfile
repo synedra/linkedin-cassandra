@@ -69,7 +69,7 @@ USER gitpod
 RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok-full
 
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code
+COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code/extensions
 RUN mkdir /home/gitpod/.gitpod-code/Machine
 COPY --chown=gitpod:gitpod /root/config/data/User/settings.json /home/gitpod/.gitpod-code/Machine/settings.json
 COPY --chown=gitpod:gitpod /root/config/workspace /home/gitpod/.gitpod-code/
