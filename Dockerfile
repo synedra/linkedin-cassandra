@@ -97,10 +97,13 @@ RUN dpkg-divert --local --rename --add /sbin/initctl && \
  sed -i \
 	's/^exit.*/exit 0/' \
 	/sbin/initctl
-  
-ENV SUDO_PASSWORD=password
 
-RUN mkdir /usr/lib/node_modules
+RUN curl -L https://deb.nodesource.com/setup_16.x | bash \
+    && apt-get update -yq \
+	&& apt-get install nodejs
+RUN npm install -g astra-setup netlify-cli axios
+RUN pip3 install httpie-astra
+
 RUN chown -R gitpod:gitpod /usr/lib/node_modules
 RUN chmod 777 /usr/bin
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
@@ -110,8 +113,8 @@ RUN git clone https://github.com/synedra/appdev-week2-tiktok workspace/tik-tok
 RUN chown -R gitpod /workspace
 
 USER gitpod
-ENV HOME=/opt/workspace
-WORKDIR /opt/workspace/tik-tok
+ENV HOME=/workspace
+WORKDIR /workspace/tik-tok-full
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
 RUN unset HOME
