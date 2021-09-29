@@ -102,7 +102,6 @@ RUN curl -L https://deb.nodesource.com/setup_16.x | bash \
     && apt-get update -yq \
 	&& apt-get install nodejs
 RUN npm install -g astra-setup netlify-cli axios
-RUN pip3 install httpie-astra
 
 RUN chown -R gitpod:gitpod /usr/lib/node_modules
 RUN chmod 777 /usr/bin
@@ -115,6 +114,8 @@ RUN chown -R gitpod /workspace
 USER gitpod
 ENV HOME=/workspace
 WORKDIR /workspace/tik-tok-full
+RUN pip3 install httpie-astra
+
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
 RUN unset HOME
