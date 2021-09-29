@@ -106,8 +106,8 @@ RUN chmod 777 /usr/bin
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 
 # Pull in repo
-RUN git clone https://github.com/synedra/appdev-week2-tiktok /opt/workspace/tik-tok
-RUN chown -R gitpod /opt/workspace
+RUN git clone https://github.com/synedra/appdev-week2-tiktok workspace/tik-tok
+RUN chown -R gitpod /workspace
 
 USER gitpod
 ENV HOME=/opt/workspace
