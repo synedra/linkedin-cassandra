@@ -109,15 +109,21 @@ RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/
 RUN git clone https://github.com/synedra/appdev-week2-tiktok /opt/workspace/tik-tok
 RUN chown -R gitpod /opt/workspace
 
+RUN chown -R gitpod:gitpod /workspace
+RUN mkdir -p /home/gitpod/.gitpod-code/Machine
+RUN chown -R gitpod:gitpod /home/gitpod/.gitpod-code/Machine
+
+COPY /root/etc/ /etc
+
 USER gitpod
-ENV HOME=/opt/workspace
-WORKDIR /opt/workspace/tik-tok
-RUN npm install -g astra-setup netlify-cli axios
-RUN pip3 install httpie-astra
-RUN unset HOME
-RUN echo "if test -d \"/config/workspace/astra-tik-tok\"" >> /opt/workspace/.bashrc
-RUN echo "then" >> /opt/workspace/.bashrc
-RUN echo "  cd /config/workspace/astra-tik-tok" >> /opt/workspace/.bashrc
-RUN echo "fi" >> /opt/workspace/.bashrc
-RUN echo "alias git-remote=\"/bin/bash /config/workspace/resources/git-remote\"" >> /opt/workspace/.bashrc
-RUN echo "alias netlify-site=\"/bin/bash /config/workspace/resources/netlify-site\"" >> /opt/workspace/.bashrc
+
+RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok-full
+
+COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
+COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code/extensions
+COPY --chown=gitpod:gitpod /root/config/data/User/settings.json /home/gitpod/.gitpod-code/Machine/settings.json
+COPY --chown=gitpod:gitpod /root/config/workspace /home/gitpod/.gitpod-code/
+
+EXPOSE 8888
+EXPOSE 8443
+EXPOSE 3000
