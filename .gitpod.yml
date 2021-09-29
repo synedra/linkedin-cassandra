@@ -5,8 +5,8 @@ tasks:
   - name: tiktok
     command: |
       cd /workspace
-      gp preview /workspace/tiktok/README.md
       git clone https://github.com/synedra/appdev-week2-tiktok tik-tok-full
+      gp preview /workspace/tik-tok-full/README.md
 
 github:
   prebuilds:
