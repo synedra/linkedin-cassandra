@@ -63,10 +63,10 @@ RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
 # Pull in repo
 RUN chown -R gitpod:gitpod /workspace
-RUN mkdir /home/gitpod/.gitpod-code/Machine
+RUN mkdir -p /home/gitpod/.gitpod-code/Machine
 RUN chown -R gitpod:gitpod /home/gitpod/.gitpod-code/Machine
 
-COPY --chown=gitpod:gitpod /root/config/etc/ etc
+COPY --chown=gitpod:gitpod /root/etc/ etc
 
 USER gitpod
 
