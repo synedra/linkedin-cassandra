@@ -63,16 +63,17 @@ RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
 # Pull in repo
 RUN chown -R gitpod:gitpod /workspace
-
 USER gitpod
+WORKDIR /workspace
 
-RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok-full
+
+RUN git clone https://github.com/synedra/appdev-week2-tiktok tik-tok-full
 
 RUN mkdir -p /home/gitpod/.gitpod-code/extensions
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-ADD --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code
-ADD --chown=gitpod:gitpod /root/config/data /home/gitpod/.gitpod-cod
-ADD --chown=gitpod:gitpod /root/config/workspace /home/gitpod/.gitpod-code/
+ADD --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code/extensions
+ADD --chown=gitpod:gitpod /root/config/data /home/gitpod/.gitpod-code/data
+ADD --chown=gitpod:gitpod /root/config/workspace /home/gitpod/.gitpod-code/workspace
 
 EXPOSE 8888
 EXPOSE 8443
