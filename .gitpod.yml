@@ -1,2 +1,25 @@
 image:
   file: Dockerfile
+
+tasks:
+  - name: tiktok
+    command: |
+      cd /workspace/appdev-week1-todolist
+      gp open README.md
+      npm install
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: true
+    addComment: false
+    addBadge: true
+    addLabel: false
+ports:
+  - port: 8888
+    onOpen: open-preview
+  - port: 3000
+    onOpen: ignore 
