@@ -73,6 +73,7 @@ COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code/ext
 RUN mkdir /home/gitpod/.gitpod-code/Machine
 COPY --chown=gitpod:gitpod /root/config/data/User/settings.json /home/gitpod/.gitpod-code/Machine/settings.json
 COPY --chown=gitpod:gitpod /root/config/workspace /home/gitpod/.gitpod-code/
+COPY --chown=gitpod:gitpod /root/config/etc/ etc
 
 EXPOSE 8888
 EXPOSE 8443
