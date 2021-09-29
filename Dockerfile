@@ -66,7 +66,7 @@ RUN chown -R gitpod:gitpod /workspace
 RUN mkdir -p /home/gitpod/.gitpod-code/Machine
 RUN chown -R gitpod:gitpod /home/gitpod/.gitpod-code/Machine
 
-COPY --chown=gitpod:gitpod /root/etc/ etc
+COPY --chown=gitpod:gitpod /root/etc/ /etc
 
 USER gitpod
 
