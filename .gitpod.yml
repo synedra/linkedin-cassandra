@@ -4,9 +4,8 @@ image:
 tasks:
   - name: tiktok
     command: |
-      cd /workspace/appdev-week1-todolist
+      cd /workspace
       gp open README.md
-      npm install
 
 github:
   prebuilds:
