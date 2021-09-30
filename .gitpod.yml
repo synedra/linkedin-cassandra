@@ -1,4 +1,4 @@
-image: synedra/dockercodetour:latest
+image: synedra/dstxcodetour
     
 github:
   prebuilds:
