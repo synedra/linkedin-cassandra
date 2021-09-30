@@ -114,7 +114,7 @@ USER gitpod
 # Pull in repo
 RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok-full
 
-WORKDIR /workspace/tik-tok-full
+WORKDIR /workspace
 
 RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
@@ -123,7 +123,6 @@ RUN unset HOME
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code/extensions
 COPY --chown=gitpod:gitpod /root/config/data/User/settings.json /workspace/appsembler-tiktok/.vscode/settings.json
-COPY --chown=gitpod:gitpod /root/config/workspace/ /workspace/appsembler-tiktok/
 
 EXPOSE 8888
 EXPOSE 8443
