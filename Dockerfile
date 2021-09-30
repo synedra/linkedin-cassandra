@@ -108,6 +108,7 @@ RUN chmod 777 /usr/bin
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 RUN chown -R gitpod /workspace
 ENV HOME=/workspace
+
 USER gitpod
 
 
@@ -116,7 +117,6 @@ RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok-
 
 WORKDIR /workspace
 
-RUN npm install -g astra-setup netlify-cli axios
 RUN pip3 install httpie-astra
 RUN unset HOME
 
