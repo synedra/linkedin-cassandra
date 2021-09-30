@@ -4,8 +4,7 @@ tasks:
   - name: tiktok
     command: |
       cd /workspace
-      gp preview /workspace/tik-tok-full/README.md
-
+      
 github:
   prebuilds:
     master: true
