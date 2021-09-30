@@ -123,7 +123,7 @@ RUN unset HOME
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code/extensions
 COPY --chown=gitpod:gitpod /root/config/data/User/settings.json /workspace/appsembler-tiktok/.vscode/settings.json
-COPY --chown=gitpod:gitpod /root/config/workspace /home/gitpod/.gitpod-code/
+COPY --chown=gitpod:gitpod /root/config/workspace/ /workspace/appsembler-tiktok/
 
 EXPOSE 8888
 EXPOSE 8443

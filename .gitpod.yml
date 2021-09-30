@@ -3,8 +3,9 @@ image: synedra/dockercodetour
 tasks:
   - name: tiktok
     command: |
-      cd /workspace
-      
+      cp -r /workspace/appsembler-tiktok/root/config/workspace/ /workspace
+      cp -r /workspace/appsembler-tiktok/root/config/data/User/settings.json /workspace/appsembler-tiktok/.vscode/settings.json
+
 github:
   prebuilds:
     master: true
