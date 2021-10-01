@@ -4,7 +4,6 @@ image:
 vscode:
   extensions:
     - vsls-contrib.codetour
-    - gabrielgrinberg.auto-run-command
     - auchenberg.vscode-browser-preview
   
 github:
