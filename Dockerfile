@@ -8,8 +8,7 @@ RUN set -ex; \
 	apt-get install -y --no-install-recommends \
         chromium-chromedriver \
         vim \
-        python3 \
-		software-properties-common apt-transport-https wget
+        python3 
 
 #RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 #RUN add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
