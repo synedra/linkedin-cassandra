@@ -106,7 +106,7 @@ if test -d /workspace/astra-tik-tok
 then
     cd /workspace/astra-tik-tok
 fi
-alias astra-setup="node /usr/lib/node_modules/.bin/astra-setup"
+alias astra-setup="node /usr/lib/node_modules/astra-setup/src/astra-setup"
 alias netlify="node /usr/lib/node_modules/.bin/netlify"
 alias git-remote="/bin/bash /workspace/resources/git-remote"
 alias netlify-site="/bin/bash /workspace/resources/netlify-site"

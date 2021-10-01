@@ -1,4 +1,5 @@
-image: synedra/dstxcodetour
+image: 
+  file: Dockerfile
     
 github:
   prebuilds:
