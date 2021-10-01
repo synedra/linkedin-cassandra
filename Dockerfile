@@ -19,15 +19,15 @@ RUN npm install -g astra-setup netlify-cli axios
 
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 RUN chown -R gitpod:gitpod /workspace
+COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
+COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code/extensions
+
 USER gitpod
 
 # Pull in repo
 RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok-full
 
 RUN pip3 install httpie-astra
-
-COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code/extensions
 
 EXPOSE 8888
 EXPOSE 8443
