@@ -17,8 +17,6 @@ RUN  yarn config set network-timeout 600000 -g
 RUN  yarn --verbose global add code-server
 RUN  yarn cache clean
 
-RUN code --help
-
 RUN curl -L https://deb.nodesource.com/setup_16.x | bash \
     && apt-get update -yq \
 	&& apt-get install nodejs
