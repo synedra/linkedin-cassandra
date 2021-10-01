@@ -1,11 +1,5 @@
 image: 
   file: Dockerfile
-
-tasks:
-  - name: VSCode extensions
-    before: |
-      cp -r /.vscode/extensions/* /home/gitpod/.vscode/
-
     
 github:
   prebuilds:
