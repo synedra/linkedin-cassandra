@@ -1,6 +1,12 @@
 image: 
   file: Dockerfile
-    
+
+vscode:
+  extensions:
+    - vsls-contrib.codetour-0.0.58
+    - gabrielgrinberg.auto-run-command-1.5.0
+    - auchenberg.vscode-browser-preview-0.7.1
+  
 github:
   prebuilds:
     master: true
