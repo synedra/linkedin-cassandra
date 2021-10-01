@@ -32,7 +32,7 @@ RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/
 RUN chown -R gitpod:gitpod /workspace
 RUN mkdir /home/gitpod/.vscode
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.vscode/
+COPY --chown=gitpod:gitpod /root/config/extensions/ /home/gitpod/.gitpod-code/extensions
 USER gitpod
 
 # Pull in repo
