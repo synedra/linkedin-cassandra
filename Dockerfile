@@ -21,8 +21,8 @@ RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/
 RUN chown -R gitpod:gitpod /workspace
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 COPY --chown=gitpod:gitpod /root/config/extensions/gabrielgrinberg.auto-run-command-1.5.0 /home/gitpod/.gitpod-code/extensions/
-COPY --chown=gitpod:gitpod /root/config/extensions/auchenberg.vscode-browser-preview-0.7.1 /home/gitpod/.gitpod-code/extensions/
-COPY --chown=gitpod:gitpod /root/config/extensions/vsls-contrib.codetour-0.0.58 /home/gitpod/.gitpod-code/extensions/
+#COPY --chown=gitpod:gitpod /root/config/extensions/auchenberg.vscode-browser-preview-0.7.1 /home/gitpod/.gitpod-code/extensions/
+#COPY --chown=gitpod:gitpod /root/config/extensions/vsls-contrib.codetour-0.0.58 /home/gitpod/.gitpod-code/extensions/
 
 USER gitpod
 
