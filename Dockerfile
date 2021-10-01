@@ -17,6 +17,8 @@ RUN  yarn config set network-timeout 600000 -g
 RUN  yarn --verbose global add code-server
 RUN  yarn cache clean
 
+RUN code --help
+
 RUN curl -L https://deb.nodesource.com/setup_16.x | bash \
     && apt-get update -yq \
 	&& apt-get install nodejs
@@ -25,9 +27,9 @@ RUN npm install -g astra-setup netlify-cli axios
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 RUN chown -R gitpod:gitpod /workspace
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-COPY --chown=gitpod:gitpod /root/config/extensions/gabrielgrinberg.auto-run-command-1.5.0 /home/gitpod/.gitpod-code/extensions/
-COPY --chown=gitpod:gitpod /root/config/extensions/auchenberg.vscode-browser-preview-0.7.1 /home/gitpod/.gitpod-code/extensions/
-COPY --chown=gitpod:gitpod /root/config/extensions/vsls-contrib.codetour-0.0.58 /home/gitpod/.gitpod-code/extensions/
+#COPY --chown=gitpod:gitpod /root/config/extensions/gabrielgrinberg.auto-run-command-1.5.0 /home/gitpod/.gitpod-code/extensions/
+#COPY --chown=gitpod:gitpod /root/config/extensions/auchenberg.vscode-browser-preview-0.7.1 /home/gitpod/.gitpod-code/extensions/
+#COPY --chown=gitpod:gitpod /root/config/extensions/vsls-contrib.codetour-0.0.58 /home/gitpod/.gitpod-code/extensions/
 
 USER gitpod
 
