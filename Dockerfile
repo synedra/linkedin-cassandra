@@ -11,8 +11,8 @@ RUN set -ex; \
         python3 \
 		software-properties-common apt-transport-https wget
 
-RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-RUN add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+#RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+#RUN add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 #RUN set -ex; \
 #	apt-get update; \
 #	apt-get install -y --no-install-recommends code
