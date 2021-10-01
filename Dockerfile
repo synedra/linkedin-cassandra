@@ -27,7 +27,7 @@ RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok-
 RUN pip3 install httpie-astra
 
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code/extensions
+#COPY --chown=gitpod:gitpod /root/config/extensions /home/gitpod/.gitpod-code/extensions
 
 EXPOSE 8888
 EXPOSE 8443
