@@ -2,13 +2,17 @@ FROM gitpod/workspace-full
 
 USER root
 
+RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
+RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
 RUN set -ex; \
 	apt-get update; \
     apt-get upgrade -y && \
 	apt-get install -y --no-install-recommends \
         chromium-chromedriver \
         vim \
-        python3 
+        python3 \
+        gh
 
 RUN apt-get clean
 RUN curl -L https://deb.nodesource.com/setup_16.x | bash \
