@@ -14,6 +14,7 @@ RUN set -ex; \
         python3 \
         gh
 
+RUN mkdir -p /usr/lib/node_modules
 RUN chmod 777 /usr/lib/node_modules
 
 RUN apt-get clean
