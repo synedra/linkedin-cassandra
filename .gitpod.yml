@@ -7,6 +7,7 @@ vscode:
     - auchenberg.vscode-browser-preview
     - https://marketplace.visualstudio.com/_apis/public/gallery/publishers/gabrielgrinberg/vsextensions/auto-run-command/1.6.0/vspackage
   
+workspaceLocation: /workspace
 github:
   prebuilds:
     master: true
