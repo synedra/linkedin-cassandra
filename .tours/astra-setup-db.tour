@@ -9,11 +9,11 @@
     },
     {
       "title": "Setup Git",
-      "description": "## Set up local git repository\n\nIn order to work with netlify, where we'll be hosting the application in the cloud, a github repository needs to be create.\n\nFirst, git wants to know a little bit about you\n\n>> git config --global user.email TikTok@example.com\n\n>> git config --global user.name 'Tik Tok'\n\nNow, make your directory into a git repository.\n\n>> git init\n\nAdd all the files in your workspace.\n\n>> git add -A\n\n... and take out the ones we don't need.\n\n>> git rm -rf yarn.lock src/App.test.js src/reportWebVitals.js src/setupTests.js\n\nCommit your starting lineup to your local git repository.\n\n>> git commit -a -m 'Initial commit'\n\n"
+      "description": "## Set up local git repository\n\nIn order to work with netlify, where we'll be hosting the application in the cloud, a github repository needs to be create.\n\nFirst, git wants to know a little bit about you\n\n>> git config --global user.email TikTok@example.com\n\n>> git config --global user.name 'Tik Tok'\n\nNow, make your directory into a git repository.\n\n>> git init\n\nRename the master branch to \"main\":\n\n>> git branch -M main\n\nAdd all the files in your workspace.\n\n>> git add -A\n\n... and take out the ones we don't need.\n\n>> git rm -rf yarn.lock src/App.test.js src/reportWebVitals.js src/setupTests.js\n\nCommit your starting lineup to your local git repository.\n\n>> git commit -a -m 'Initial commit'\n\n"
     },
     {
       "title": "Setup github repository",
-      "description": "First, use the github command line to If you do not have a GitHub account, create one now.  >> git-remote\n\nRename the master branch to \"main\"\n\n>> git branch -M main\n\nPush your repository up to github.\n\n>> git push -u origin main\n\n"
+      "description": "First, use the github command line tool (gh) to authenticate with Github.\n\n>> gh auth login\n\n* What account do you want to log into? *GitHub.com*\n* What is your preferred protocol for Git operations? *HTTPs*\n* Authenticate Git with your GitHub credentials? *Y*\n* Copy the one-time code\n* It will try (but fail) to open the site over to the right.  Ignore that, and [Go directly to the auth website](https://github.com/login/device)\n* If you do not have a GitHub account, create one now.  \n\n>> gh repo create\n\n* Repository name astra-tik-tok\n* Repository description My repository\n* Visibility Public\n* This will add an \"origin\" git remote to your local repository. Continue? Yes\n\nNow push your repo contents to github.\n\n>> git push -u origin main\n\n"
     },
     {
       "title": "Knowledge Check",

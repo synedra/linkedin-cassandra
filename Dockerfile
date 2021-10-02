@@ -14,8 +14,10 @@ RUN set -ex; \
         python3 \
         gh
 
+RUN chmod 777 /usr/lib/node_modules
+
 RUN apt-get clean
-RUN curl -L https://deb.nodesource.com/setup_16.x | bash \
+RUN curl -L https://deb.nodesource.com/setup_14.x | bash \
     && apt-get update -yq \
 	&& apt-get install nodejs
 RUN npm install -g astra-setup netlify-cli axios
