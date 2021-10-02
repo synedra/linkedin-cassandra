@@ -135,10 +135,6 @@
     {
       "title": "Check your changes",
       "description": "## Check your changes\n\nStart the server:\n\nPush your changes\n\n>> git add -A\n\n>> git commit -a -m \"Adding items to hook together.\"\n\n>> git push origin main\n\n\n\nVisit the [home page](https://adoring-golick-98d83c.netlify.app/) of your site to make sure things are rendering appropriately."
-    },
-    {
-      "title": "Hook Everything Together Knowledge Check",
-      "description": "Visit the [Knowledge Check](https://datastax.tahoe.appsembler.com/courses/course-v1:datastax+DSTEST+TRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/197eb7b0dd754c9790e44b0716957860/) for this section to make sure everything's clear.  See you when you get back!"
     }
   ]
 }

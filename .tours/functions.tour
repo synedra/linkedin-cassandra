@@ -24,10 +24,6 @@
       "file": "astra-tik-tok/netlify.toml",
       "line": 31,
       "description": "## Set configuration in netlify.toml\n\n```jsx\n[build]\ncommand = \"npm run build\"\nfunctions = \"functions\"\npublish = \"build\"\n```"
-    },
-    {
-      "title": "Functions Knowledge Check",
-      "description": "Visit the [Knowledge Check](https://datastax.tahoe.appsembler.com/courses/course-v1:datastax+DSTEST+TRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/7c0a52a222414f54a365568b34336fb2/) for this section to make sure everything's clear.  See you when you get back!"
     }
   ]
 }

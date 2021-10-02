@@ -85,10 +85,6 @@
       {
         "title": "Check it out",
         "description": "## Check your changes\n\nPush your changes.\n\n>> git add -A\n\n>> git commit -a -m \"Adding new functions\"\n\n>> git push origin main\n\nVisit the [home page](https://adoring-golick-98d83c.netlify.app) of your site to make sure things are rendering appropriately.\n\nTry a few new things in the site:\n* Follow/unfollow to check that function\n* Upload a video\n* Check the new video on the home page."
-      },
-      {
-        "title": "Final Exam",
-        "description": "All done!\n\nVisit the [Final Exam](https://datastax.tahoe.appsembler.com/courses/course-v1:datastax+DSTEST+TRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/094c0836f12945029f450a0c126dd49e/) for this course."
       }
     ]
   }
