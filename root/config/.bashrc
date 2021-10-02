@@ -102,9 +102,11 @@ fi
 export PATH="${PATH}:/opt/bin" 
 
 cd /workspace
-if test -d /workspace/astra-tik-tok
+if test -d /workspace/appsembler-tiktok/astra-tik-tok
 then
-    cd /workspace/astra-tik-tok
+    cd /workspace/appsembler-tiktok/astra-tik-tok
+else
+    cd /workspace/appsembler-tiktok
 fi
 alias astra-setup="node /usr/lib/node_modules/astra-setup/src/astra-setup"
 alias netlify="node /usr/lib/node_modules/.bin/netlify"
