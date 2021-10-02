@@ -130,10 +130,6 @@
       },
       "description": "## Add Functionality to Upload.js\n\nIn the `Upload.js` page, we'll throw together a simple form that can be filled out. For now there will be plenty of filler information.\n\n>> cp /config/workspace/resources/Upload.js /config/workspace/astra-tik-tok/src/pages",
       "line": 336
-    },
-    {
-      "title": "React Knowledge Check",
-      "description": "Visit the [Knowledge Check](https://datastax.tahoe.appsembler.com/courses/course-v1:datastax+DSTEST+TRIAL/courseware/30db6dedcc9f4712ad9bae67c36e6b77/679cb5ad641e415d8f0f0fb19319b196/) for this section to make sure everything's clear.  See you when you get back!"
     }
   ]
 }
