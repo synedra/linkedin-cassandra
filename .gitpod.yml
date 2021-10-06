@@ -5,8 +5,8 @@ vscode:
   extensions:
     - vsls-contrib.codetour
     - auchenberg.vscode-browser-preview
-    - gabrielgrinberg.auto-run-command
-    
+    - https://marketplace.visualstudio.com/_apis/public/gallery/publishers/gabrielgrinberg/vsextensions/auto-run-command/1.6.0/vspackage
+
 github:
   prebuilds:
     master: true
