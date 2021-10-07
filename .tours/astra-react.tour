@@ -2,9 +2,6 @@
   "$schema": "https://aka.ms/codetour-schema",
   "title": "2. Start Building a React app",
   "nextTour": "3. Netlify",
-  "commands": [
-    "workbench.action.terminal.newWithCwd?[{\"cwd\":\"/opt/workspace/astra-tik-tok\"}]"
-  ],
   "steps": [
     {
       "file": "astra-tik-tok/src/index.js",
@@ -40,9 +37,6 @@
     },
     {
       "title": "Install react-router-dom",
-      "commands": [
-        "workbench.action.terminal.newWithCwd?['cwd':'/config/workspace/astra-tik-tok']"
-      ],
       "description": "## Routing Library\nFor this project, we'll be using a routing library called `react-router` that will help us handle page routing.\n\nInstall the `react-router-dom` package\n\n>> yarn add react-router-dom"
     },
     {
