@@ -22,14 +22,13 @@ RUN npm install -g astra-setup netlify-cli axios
 
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 RUN chmod 777 /usr/lib/node_modules/astra-setup/node_modules/node-jq/bin/jq
-RUN git clone https://github.com/synedra/appdev-week2-tiktok /opt/workspace/tik-tok
 RUN chown -R gitpod:gitpod /workspace
 
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 USER gitpod
 
 # Pull in repo
-RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok-full
+RUN git clone https://github.com/synedra/appdev-week2-tiktok /workspace/tik-tok
 
 RUN pip3 install httpie-astra
 
