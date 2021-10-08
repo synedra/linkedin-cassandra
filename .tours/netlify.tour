@@ -7,16 +7,12 @@
   ],
   "steps": [
     {
-      "title": "Introduction to Netlify",
-      "description": "# ⚒️ Getting Started with Astra/Stargate and Netlify\n\nIn this step you will work with React Components to understand how they work, returning HTML via the render() function.  Header and FollowersColumn React Components will be created to use in our app.\n\n**Objectives**\n1. Brief introduction to Netlify\n2. Install modules\n3. Set up your netlify app with netlify-cli\n4. Add netlify serverless functions"
-    },
-    {
       "title": "Brief introduction to Netlify",
       "description": "---\n\n## Step 1. Brief introduction to Netlify\n\nNow it is time to start getting post data into the Cassandra database. To get data in, you are going to create a serverless function. For this, you are going to use Netlify and Netlify functions. This means that it is not necessary to write a server, everything can be done with Netlify functions. Netlify deploys the functions you write as full API endpoints and will even run them automatically in response to events. If you haven't heard of Netlify functions before, this is a good place to start.  If you want to read more about Netlify, visit the [Getting Started documentation](https://docs.netlify.com/cli/get-started/)."
     },
     {
       "title": "Create Netlify Site",
-      "description": "# Create Netlify Site\n\nIn this step, you'll create a new Netlify site based on your git repository.\n\n>> netlify sites:create\n\n* First, CMD-click or right click on the URL shown and go through the steps to authorize\n* Next, choose your team\n* Finally, you can define a site name or get a random one - for now, just go with random, you can change it later.\n\nNext, link your netlify site to your local workspace.\n\n>> netlify link\n\n* Choose from a list of your recently updated sites\n* Hit enter to choose the top (latest) one\n\nAnd then you will take your environment variables and send them to Netlify so your site can be hosted.\n\n>> netlify env:import .env\n\nBuild your site to get it ready to deploy.\n\n>> netlify build\n\nDeploy to production (just because this is a demo!)\n\n>> netlify deploy -p\n\nCheck the information for your current site with the following command, then command-click or right-click the site URL to visit your site.\n\n>> netlify status"
+      "description": "# Create Netlify Site\n\nIn this step, you'll create a new Netlify site based on your git repository.\n\n>> netlify sites:create\n\n* First, CMD-click or right click on the URL shown and go through the steps to authorize\n* Next, choose your team\n* Finally, you can define a site name or get a random one - for now, just go with random, you can change it later.\n\nNext, link your netlify site to your local workspace.\n\n>> netlify link\n\n* Choose from a list of your recently updated sites\n* Hit enter to choose the top (latest) one\n\nAnd then you will take your environment variables and send them to Netlify so your site can be hosted.\n\n>> netlify env:import .env\n\nBuild your site to get it ready to deploy.\n\n>> netlify build\n\nDeploy to production (just because this is a demo!)\n\n>> netlify deploy -p\n\nCheck the information for your current site with the following command, then command-click or right-click the site URL to visit your site.\n\n>> netlify open:site"
     }
   ]
 }
