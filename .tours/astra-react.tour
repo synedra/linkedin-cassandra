@@ -17,7 +17,7 @@
         }
       },
       "description": "## Edit boilerplate React files\nFirst, we're going to make a few edits to the `create-react-app` boilerplate code. Let's start with `index.js`.\n\n---\n\n### Edit index.js\n\nYou won't be using the \"reportWebVitals\" function, so let's get rid of it entirely.\n\n```jsx\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.css';\nimport App from './App';\n\n\nReactDOM.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>,\n  document.getElementById('root')\n);\n```",
-      "line": 242
+      "line": 253
     },
     {
       "file": "astra-tik-tok/src/App.js",
@@ -33,17 +33,11 @@
         }
       },
       "description": "## App.js\nNext, we'll remove all the example content from our main file, `App.js`.\n\n---\n\n### Edit App.js\nReplace App.js content with the minimal component information.\n\n```jsx\nimport './App.css'\nconst App = () => {\n  return (\n    <div className=\"App\">\n    </div>\n  );\n}\nexport default App\n```\n",
-      "line": 154
+      "line": 161
     },
     {
       "title": "Install react-router-dom",
       "description": "## Routing Library\nFor this project, we'll be using a routing library called `react-router` that will help us handle page routing.\n\nInstall the `react-router-dom` package\n\n>> yarn add react-router-dom"
-    },
-    {
-      "file": "astra-tik-tok/src/App.js",
-      "title": "Add react-router-dom to App.js",
-      "line": 1,
-      "description": "## Import Routing Library\n\nNow we need to import the `react-router` library to use in our app.\n\n---\n\nAdd the import statement for react-router-dom at the top of App.js\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\n\n```"
     },
     {
       "title": "Bring in updated files",
@@ -51,26 +45,16 @@
     },
     {
       "file": "astra-tik-tok/src/App.js",
-      "selection": {
-        "start": {
-          "line": 1,
-          "character": 1
-        },
-        "end": {
-          "line": 9,
-          "character": 19
-        }
-      },
       "title": "Add routing magic to App.js",
-      "description": "## Add structure to App.js\n\nIt's time to get App.js ready to do some real work.  The App.js file was updated, let's take a look\n\nThe following pieces have changed:\n* Importing the HashRouter, Route and Switch components\n* Adding a `<Hashrouter>` at the top of your App component\n* In the `<Hashrouter>`:\n  * Inserting a Switch component to direct queries to the right place\n  * Adding a `<Header />` component to hold the header\n* Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match \"wins\" so you can land in some frustration if you don't keep this in mind.\n\n",
-      "line": 386
+      "line": 1,
+      "description": "## Add structure to App.js\n\nIt's time to get App.js ready to do some real work.  The App.js file was updated, let's take a look\n\nThe following pieces have changed:\n* Importing the HashRouter, Route and Switch components\n* Adding a `<Hashrouter>` at the top of your App component\n* In the `<Hashrouter>`:\n  * Inserting a Switch component to direct queries to the right place\n  * Adding a `<Header />` component to hold the header\n* Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match \"wins\" so you can land in some frustration if you don't keep this in mind.\n\n"
     },
     {
       "title": "Component setup",
       "description": "# ⚒️ Adding some Content to the Components\n\nIn this step you will work with React Components to understand how they work, returning HTML via the render() function.  Header and FollowersColumn React Components will be created to use in our app.\n\n**Objectives**\n1. A Header that is going to be consistent for the upload page and the home page\n2. A FollowersColumn column where we can see people that we are currently following\n3. A feed and a little box of suggested accounts"
     },
     {
-      "title": "Create components directory",
+      "title": "Component imports",
       "description": "## Components setup\n\nThe /components directory has been pulled in, and we'll take a look at that in a moment.  First, Install the packages needed to make everything work.\n\n>> yarn add axios @astrajs/collections faker"
     },
     {
@@ -99,11 +83,11 @@
       "file": "astra-tik-tok/src/pages/Home.js",
       "line": 55,
       "title": "Reviewing Home.js",
-      "description": "## Now, add our `FollowersColumn.js` component into our `Home.js` page."
+      "description": "## Add FollowersColumn\n\nNow, add our `FollowersColumn.js` component into our `Home.js` page."
     },
     {
       "file": "astra-tik-tok/src/pages/Upload.js",
-      "title":"Reviewing Upload.js",
+      "title": "Reviewing Upload.js",
       "description": "## Reviewing Upload.js\n\nIn the `Upload.js` page, there a simple form that can be filled out. For now there will be plenty of filler information.",
       "line": 1
     }
