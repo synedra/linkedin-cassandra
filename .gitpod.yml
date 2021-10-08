@@ -6,8 +6,6 @@ vscode:
     - vsls-contrib.codetour
     - auchenberg.vscode-browser-preview
     - synedra.auto-run-command
-    
-workspaceLocation: '.'
 
 github:
   prebuilds:
