@@ -17,7 +17,7 @@
         }
       },
       "description": "## Edit boilerplate React files\nFirst, we're going to make a few edits to the `create-react-app` boilerplate code. Let's start with `index.js`.\n\n---\n\n### Edit index.js\n\nYou won't be using the \"reportWebVitals\" function, so let's get rid of it entirely.\n\n```jsx\nimport React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.css';\nimport App from './App';\n\n\nReactDOM.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>,\n  document.getElementById('root')\n);\n```",
-      "line": 253
+      "line": 264
     },
     {
       "file": "astra-tik-tok/src/App.js",
@@ -33,7 +33,7 @@
         }
       },
       "description": "## App.js\nNext, we'll remove all the example content from our main file, `App.js`.\n\n---\n\n### Edit App.js\nReplace App.js content with the minimal component information.\n\n```jsx\nimport './App.css'\nconst App = () => {\n  return (\n    <div className=\"App\">\n    </div>\n  );\n}\nexport default App\n```\n",
-      "line": 161
+      "line": 168
     },
     {
       "title": "Install react-router-dom",
@@ -41,7 +41,7 @@
     },
     {
       "title": "Bring in updated files",
-      "description": "## Creating Pages\n\nSo now lets bring in the files for our application. \n\n>> cp -r /workspace/appsembler-tiktok/resources/tour2/* /workspace/appsembler-tiktok/astra-tik-tok/src"
+      "description": "## Creating Pages\n\nSo now lets bring in the files for our application. \n\n>> cp -r /workspace/resources/tour2/* /workspace/astra-tik-tok/src"
     },
     {
       "file": "astra-tik-tok/src/App.js",
@@ -81,7 +81,7 @@
     },
     {
       "file": "astra-tik-tok/src/pages/Home.js",
-      "line": 55,
+      "line": 8,
       "title": "Reviewing Home.js",
       "description": "## Add FollowersColumn\n\nNow, add our `FollowersColumn.js` component into our `Home.js` page."
     },
