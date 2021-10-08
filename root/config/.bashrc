@@ -100,13 +100,11 @@ fi
 
 
 export PATH="${PATH}:/opt/bin" 
-cd /workspace/appsembler-tiktok
+cd /workspace
 
 if test -d /workspace/astra-tik-tok
 then
     cd /workspace/astra-tik-tok
-else
-    cd /workspace
 fi
 alias astra-setup="node /usr/lib/node_modules/astra-setup/src/astra-setup"
 alias git-remote="/bin/bash /workspace/resources/git-remote"
