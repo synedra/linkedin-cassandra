@@ -2,7 +2,6 @@
   "$schema": "https://aka.ms/codetour-schema",
   "title": "3. Netlify",
   "nextTour": "4. Functions",
- 
   "steps": [
     {
       "title": "Brief introduction to Netlify",
@@ -11,11 +10,11 @@
     {
       "title": "Copy netlify.toml",
       "line": 31,
-      "description": "## Set configuration in netlify.toml \n\n >> cp /workspace/appsembler-tiktok/root/netlify.toml /workspace/appsembler-tiktok/astra-tik-tok"
+      "description": "## Set configuration in netlify.toml \n\n>> cp /workspace/resources/netlify.toml /workspace/astra-tik-tok"
     },
     {
       "title": "Create Netlify Site",
-      "description": "# Create Netlify Site\n\nIn this step, you'll create a new Netlify site based on your git repository.\n\nFirst, grab a netlify.toml file to tell netlify how to build.\n\n>> cp /workspace/appsembler-tiktok/resources/netlify.toml workspace/appsembler-tiktok/astra-tik-tok\n\n\n>> netlify sites:create\n\n* First, CMD-click or right click on the URL shown and go through the steps to authorize\n* Next, choose your team\n* Finally, you can define a site name or get a random one - for now, just go with random, you can change it later.\n\nNext, link your netlify site to your local workspace.\n\n>> netlify link\n\n* Choose from a list of your recently updated sites\n* Hit enter to choose the top (latest) one\n\nAnd then you will take your environment variables and send them to Netlify so your site can be hosted.\n\n>> netlify env:import .env\n\nBuild your site to get it ready to deploy.\n\n>> netlify build\n\nDeploy to production (just because this is a demo!)\n\n>> netlify deploy -p\n\nCheck the information for your current site with the following command, then command-click or right-click the site URL to visit your site.\n\n>> netlify open:site"
+      "description": "# Create Netlify Site\n\nIn this step, you'll create a new Netlify site based on your git repository.\n\n>> netlify sites:create\n\n* First, CMD-click or right click on the URL shown and go through the steps to authorize\n* Next, choose your team\n* Finally, you can define a site name or get a random one - for now, just go with random, you can change it later.\n\nNext, link your netlify site to your local workspace.\n\n>> netlify link\n\n* Choose from a list of your recently updated sites\n* Hit enter to choose the top (latest) one\n\nAnd then you will take your environment variables and send them to Netlify so your site can be hosted.\n\n>> netlify env:import .env\n\nBuild your site to get it ready to deploy.\n\n>> netlify build\n\nDeploy to production (just because this is a demo!)\n\n>> netlify deploy -p\n\nCheck the information for your current site with the following command, then command-click or right-click the site URL to visit your site.\n\n>> netlify open:site"
     }
   ]
 }

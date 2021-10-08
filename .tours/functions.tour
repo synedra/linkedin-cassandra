@@ -5,25 +5,35 @@
   "steps": [
     {
       "title": "Set up functions folder",
-      "description": "Set up the files for your serverless functions.\n\n>> mkdir functions; touch functions/addData.js; touch functions/post.js; touch netlify.toml"
+      "description": "Set up the files for your serverless functions.\n\n>> cp -r /workspace/resources/tour4 /workspace/astra-tik-tok/functions"
     },
     {
       "title": "Set up addData.js",
       "file": "astra-tik-tok/functions/addData.js",
       "line": 335,
-      "description": "## Set up addData.js\nAdd the following code to your addData.js file.  This function will put a new entry into the database.\n\n```jsx\nconst fs = require (\"fs\")\n\nconst { createClient } = require(\"@astrajs/collections\")\n\nconst collection = 'posts'\n\nexports.handler = async function (event, context, callback) {\n      const astraClient = await createClient({\n       astraDatabaseId: process.env.ASTRA_DB_ID,\n       astraDatabaseRegion: process.env.ASTRA_DB_REGION,\n       applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,\n     });\n\n  const posts = astraClient\n    .namespace(process.env.ASTRA_DB_KEYSPACE)\n    .collection(collection)\n\n  try {\n      await posts.create(\"a post\", {\n          title: \"my first post\",\n      })\n\n      return {\n          statusCode: 200,\n      }\n  } catch (e) {\n      console.error(e);\n      return {\n          statusCode: 500,\n          body: JSON.stringify(e),\n      }\n  }\n}    \n```"
+      "description": "## Set up addData.js\nThis function will put a new entry into the database.\n\nVisit the endpoint to populate the data:\n\n>> gp preview $GITPOD_WORKSPACE_URL/.netlify/functions/addData"
     },
     {
       "title": "Set up post.js",
       "file": "astra-tik-tok/functions/post.js",
       "line": 301,
-      "description": "## Set up post.js\n\nThis function is used to read the contents currently in the database.\n\n```jsx\nconst { createClient } = require(\"@astrajs/collections\")\n\nconst collection = 'posts'\n\nexports.handler = async function (event, context, callback) {\n  const astraClient = await createClient({\n       astraDatabaseId: process.env.ASTRA_DB_ID,\n       astraDatabaseRegion: process.env.ASTRA_DB_REGION,\n       applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,\n     });\n\n  const posts = astraClient\n    .namespace(process.env.ASTRA_DB_KEYSPACE)\n    .collection(collection)\n\n  try {\n      const res = await posts.find({})\n\n      return {\n          statusCode: 200,\n          body: JSON.stringify(res, null, 4)\n      }\n  } catch (e) {\n      console.error(e);\n      return {\n          statusCode: 500,\n          body: JSON.stringify(e),\n      }\n  }\n\n}\n```"
+      "description": "## Set up post.js\n\nThis function is used to read the contents currently in the database."
     },
     {
-      "title": "Set configuration in netlify.toml",
-      "file": "astra-tik-tok/netlify.toml",
-      "line": 31,
-      "description": "## Set configuration in netlify.toml\n\n```jsx\n[build]\ncommand = \"npm run build\"\nfunctions = \"functions\"\npublish = \"build\"\n```"
+      "title": "Import data from data.json",
+      "file": "astra-tik-tok/functions/addData.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 31,
+          "character": 5
+        }
+      },
+      "description": "## Call addData.js to populate the database\n\n>> gp preview `env | grep GITPOD_WORKSPACE_URL | cut -f2 -d'=' | sed s#//#//8888-#`/.netlify/functions/addData\n\n## Call post.js to see the contents\n\n>> gp preview `env | grep GITPOD_WORKSPACE_URL | cut -f2 -d'=' | sed s#//#//8888-#`/.netlify/functions/post",
+      "line": 136
     }
   ]
 }
