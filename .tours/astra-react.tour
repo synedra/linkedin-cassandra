@@ -42,7 +42,7 @@
     {
       "file": "astra-tik-tok/src/App.js",
       "title": "Add react-router-dom to App.js",
-      "line": 2,
+      "line": 0,
       "description": "## Import Routing Library\n\nNow we need to import the `react-router` library to use in our app.\n\n---\n\nAdd the import statement for react-router-dom at the top of App.js\n\n```jsx\nimport { HashRouter, Route , Switch} from 'react-router-dom'\n\n```"
     },
     {
