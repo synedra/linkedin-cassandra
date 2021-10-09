@@ -6,6 +6,8 @@ vscode:
     - vsls-contrib.codetour
     - auchenberg.vscode-browser-preview
     - synedra.auto-run-command
+    - fabiospampinato.vscode-terminals
+    
 checkoutLocation: "."
 
 github:
