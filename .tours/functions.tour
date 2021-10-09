@@ -1,7 +1,7 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
   "title": "4. Functions",
-  "nextTour": "5. Populate Data",
+  "nextTour": "5. Hook Everything Together",
   "steps": [
     {
       "title": "Set up functions folder",
