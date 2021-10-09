@@ -11,7 +11,7 @@
       "title": "Set up addData.js",
       "file": "astra-tik-tok/functions/addData.js",
       "line": 335,
-      "description": "## Set up addData.js\nThis function will put a new entry into the database.\n\nVisit the endpoint to populate the data:\n\n>> gp preview $GITPOD_WORKSPACE_URL/.netlify/functions/addData"
+      "description": "## Set up addData.js\nThis function will put a new entry into the database."
     },
     {
       "title": "Set up post.js",
@@ -22,18 +22,8 @@
     {
       "title": "Import data from data.json",
       "file": "astra-tik-tok/functions/addData.js",
-      "selection": {
-        "start": {
-          "line": 1,
-          "character": 1
-        },
-        "end": {
-          "line": 31,
-          "character": 5
-        }
-      },
-      "description": "## Call addData.js to populate the database\n\n>> gp preview `env | grep GITPOD_WORKSPACE_URL | cut -f2 -d'=' | sed s#//#//8888-#`/.netlify/functions/addData\n\n## Call post.js to see the contents\n\n>> gp preview `env | grep GITPOD_WORKSPACE_URL | cut -f2 -d'=' | sed s#//#//8888-#`/.netlify/functions/post",
-      "line": 136
+      "description": "## Start the netlify server\n\n[Run Server](command:workbench.action.tasks.runTask?[\"Run netlify dev\"])\n\n## Call addData.js to populate the database\n\n>> gp preview `env | grep GITPOD_WORKSPACE_URL | cut -f2 -d'=' | sed s#//#//8888-#`/.netlify/functions/addData\n\n## Call post.js to see the contents\n\n>> gp preview `env | grep GITPOD_WORKSPACE_URL | cut -f2 -d'=' | sed s#//#//8888-#`/.netlify/functions/post",
+      "line": 1
     }
   ]
 }
