@@ -7,7 +7,8 @@ vscode:
     - auchenberg.vscode-browser-preview
     - synedra.auto-run-command
     - fabiospampinato.vscode-terminals
-    
+    - fabiospampinato/vscode-commands
+
 checkoutLocation: "."
 
 github:
