@@ -1,90 +1,82 @@
 {
-    "$schema": "https://aka.ms/codetour-schema",
-    "title": "7. Add Functions",
-    "steps": [
-      {
-        "file": "astra-tik-tok/src/components/Card.js",
-        "selection": {
-          "start": {
-            "line": 8,
-            "character": 7
-          },
-          "end": {
-            "line": 31,
-            "character": 13
-          }
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "6. Add Functions",
+  "steps": [
+    {
+      "file": "astra-tik-tok/src/components/Card.js",
+      "selection": {
+        "start": {
+          "line": 8,
+          "character": 7
         },
-        "description": "## Add personalization\n\nCopy in a new Card.js to include information about the user.\n\n>> cp ../resources/CardFinal.js src/components"
+        "end": {
+          "line": 31,
+          "character": 13
+        }
       },
-      {
-        "file": "astra-tik-tok/src/components/MicroCard.js",
-        "selection": {
-          "start": {
-            "line": 3,
-            "character": 1
-          },
-          "end": {
-            "line": 3,
-            "character": 26
-          }
+      "description": "## Add personalization\n\nCopy in a new Card.js to include information about the user.\n\n>> cp /workspace/resources/tour6/* src"
+    },
+    {
+      "file": "astra-tik-tok/src/components/MicroCard.js",
+      "selection": {
+        "start": {
+          "line": 3,
+          "character": 1
         },
-        "description": "## Accept the user passed through to MicroCard\n\n```jsx\nconst MicroCard = (user) => {\n```"
+        "end": {
+          "line": 3,
+          "character": 26
+        }
       },
-      {
-        "file": "astra-tik-tok/src/components/MicroCard.js",
-        "selection": {
-          "start": {
-            "line": 5,
-            "character": 5
-          },
-          "end": {
-            "line": 11,
-            "character": 11
-          }
+      "description": "## Accept the user passed through to MicroCard\n\n```jsx\nconst MicroCard = (user) => {\n```"
+    },
+    {
+      "file": "astra-tik-tok/src/components/MicroCard.js",
+      "selection": {
+        "start": {
+          "line": 5,
+          "character": 5
         },
-        "description": "## Add personalization in the MicroCard\n\nBring in a new version of MicroCard that uses the user elements.\n\n>> cp ../resources/MicroCardFinal.js src/components/MicroCard.js"
+        "end": {
+          "line": 11,
+          "character": 11
+        }
       },
-      {
-        "title": "Copy edit.js in",
-        "description": "## Copy edit.js into functions\n\nWe'll use edit.js to follow/unfollow.  It will be similar to addData.js, with a couple of minor changes.\n\n>> cp /config/workspace/resources/edit.js /config/workspace/astra-tik-tok/functions\n\n>> cp -r /config/workspace/resources/utils /config/workspace/astra-tik-tok/functions"
-      },
-      {
-        "title": "Review edit.js",
-        "file": "astra-tik-tok/functions/edit.js",
-        "description": "Take a look at the edit.js file we'll be using for follow/unfollow."
-      },
-      {
-        "title": "Copy add.js in",
-        "description": "## Copy edit.js into functions\n\nWe'll use add.js to add videos.  It will be similar to addData.js, with a couple of minor changes.\n\n>> cp /config/workspace/resources/add.js /config/workspace/astra-tik-tok/functions"
-      },
-      {
-        "title": "Review add.js",
-        "description": "## Take a look at this function to see how uploads are handled.",
-        "file": "astra-tik-tok/functions/add.js"
-      },
-      {
-        "file": "astra-tik-tok/src/pages/Home.js",
-        "selection": {
-          "start": {
-            "line": 26,
-            "character": 4
-          },
-          "end": {
-            "line": 37,
-            "character": 5
-          }
+      "description": "## Add personalization in the MicroCard\n\nBring in a new version of MicroCard that uses the user elements.\n\n>> cp /workspace/resources/MicroCardFinal.js src/components/MicroCard.js"
+    },
+    {
+      "title": "Review edit.js",
+      "file": "astra-tik-tok/functions/edit.js",
+      "description": "Take a look at the edit.js file we'll be using for follow/unfollow."
+    },
+    {
+      "title": "Review add.js",
+      "description": "## Take a look at this function to see how uploads are handled.",
+      "file": "astra-tik-tok/functions/add.js"
+    },
+    {
+      "file": "astra-tik-tok/src/pages/Home.js",
+      "selection": {
+        "start": {
+          "line": 26,
+          "character": 4
         },
-        "description": "## Check the implementation in Home.js\n\nIf userToToggle is set, this code toggles the following flag on or off."
+        "end": {
+          "line": 37,
+          "character": 5
+        }
       },
-      {
-        "title": "Examine Upload.js",
-        "file": "astra-tik-tok/src/pages/Upload.js",
-        "description": "## Upload.js\n\nTake a look at this file, we'll talk about the various elements here.\n\n",
-        "line": 1
-      },
-      {
-        "title": "Check it out",
-        "description": "## Check your changes\n\nPush your changes.\n\n>> git add -A\n\n>> git commit -a -m \"Adding new functions\"\n\n>> git push origin main\n\nVisit the [home page](https://adoring-golick-98d83c.netlify.app) of your site to make sure things are rendering appropriately.\n\nTry a few new things in the site:\n* Follow/unfollow to check that function\n* Upload a video\n* Check the new video on the home page."
-      }
-    ]
-  }
+      "description": "## Check the implementation in Home.js\n\nIf userToToggle is set, this code toggles the following flag on or off."
+    },
+    {
+      "title": "Examine Upload.js",
+      "file": "astra-tik-tok/src/pages/Upload.js",
+      "description": "## Upload.js\n\nTake a look at this file, we'll talk about the various elements here.\n\n",
+      "line": 1
+    },
+    {
+      "title": "Check it out",
+      "description": "## Check your changes\n\nPush your changes.\n\n>> git add -A\n\n>> git commit -a -m \"Adding new functions\"\n\n>> netlify build\n\n>> netlify deploy -p\n\n\n>> netlify open:site\n\nTry a few new things in the site:\n* Follow/unfollow to check that function\n* Upload a video\n* Check the new video on the home page."
+    }
+  ]
+}
