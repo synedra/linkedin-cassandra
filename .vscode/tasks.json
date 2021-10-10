@@ -4,7 +4,7 @@
 			{
 			  "label": "Run netlify dev",
 			  "type": "shell",
-			  "command": "netlify dev",
+			  "command": "cd /workspace/astra-tik-tok; netlify dev",
 			  "group": "test",
 			  "presentation": {
 				"reveal": "always",
