@@ -22,7 +22,10 @@ github:
 ports:
   - port: 8888
     onOpen: open-preview
+    visibility: public
   - port: 3000
     onOpen: ignore 
+    visibility: public
   - port: 8443
     onOpen: ignore
+    visibility: public
