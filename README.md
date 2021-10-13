@@ -10,7 +10,19 @@
 A simple Tik-Tok clone running on Astra DB that leverages the Document API.
 <!--- ENDEXCLUDE --->
 
-![image](./screenshot.jpg)
+![image](./tutorials/images/screenshot.jpg)
+
+## Table of content
+
+- [Objectives]()
+- [Frequently asked questions]()
+- [Materials for the Session]()
+- [Hands-on]()
+- [Homework]()
+- [Introduction to JamStack]()
+- [Why this is cool ?]()
+- [Introduction to Netlify]()
+- [Video tutorial with Ania Kubow]()
 
 ## Objectives
 
@@ -18,18 +30,10 @@ A simple Tik-Tok clone running on Astra DB that leverages the Document API.
 * Learn how to use the @astrajs document API to quickly and easily interact with JSON documents
 * Leverage Netlify and DataStax AstraDB
 
-## ℹ️ Frequently asked questions ℹ️ 
-
-- *Can I run the workshop on my computer?*
-> There is nothing preventing you from running the workshop on your own machine. 
-> If you do so, you will need
-> * git installed on your local system
-> * [node 15 and npm 7 or later](https://www.whitesourcesoftware.com/free-developer-tools/blog/update-node-js/)
->
-> You will have to adapt commands and paths based on your environment and install the dependencies by yourself. **We won't provide support** to keep on track with schedule. However, we will do our best to give you the info you need to be successful.
+## Frequently asked questions
 
 - *What other prerequisites are there?*
-> * You will need a github account
+> * You will need a **github account**
 > * You will also need Netlify and Astra DB accounts, but we'll work through that in the exercises
 > * Use **Chrome** or **Firefox** for the best experience. Other browsers are great, but don't work well with the GitPod integration we use a bit later.
 
@@ -44,6 +48,16 @@ It doesn't matter if you join our workshop live or you prefer to do at your own 
 - [Discord chat](https://bit.ly/cassandra-workshop)
 - [Questions and Answers](https://community.datastax.com/)
 
+
+  
+## Hands-on
+
+- Click the button to launch the GitPod IDE from **YOUR** repository.
+
+* _Supported by <img src="tutorial/images/chrome-logo.svg" height="20"/> Chrome and <img src="tutorial/images/firefox-logo.svg" height="20"/> Firefox_
+
+![Open in Gitpod](https://gitpod.io/#https://github.com/datastaxdevs/workshop-tiktok-codetour)
+
 ## Homework
 
 <img src="tutorial/images/tiktok-badge.png?raw=true" width="200" align="right" />
@@ -55,16 +69,8 @@ Don't forget to complete your upgrade and get your verified skill badge! Finish 
 3. Submit your homework [here](https://github.com/datastaxdevs/workshop-tiktok-codetour/issues/new?assignees=HadesArchitect&labels=homework%2Cpending&template=homework-assignment.md&title=%5BHW%5D+%3CNAME%3E)
 
 That's it, you are done! Expect an email next week!
-  
-## Let's start
 
-- Click the button to launch the GitPod IDE from **YOUR** repository.
-
-* _Supported by <img src="tutorial/images/chrome-logo.svg" height="20"/> Chrome and <img src="tutorial/images/firefox-logo.svg" height="20"/> Firefox_
-
-[![Open in Gitpod](https://gitpod.io/#https://github.com/datastaxdevs/workshop-tiktok-codetour)
-
-## What is JamStack ?
+## Informations and courses
 
 ### 1. Introduction to the JAMStack
 
