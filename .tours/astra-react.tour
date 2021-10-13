@@ -41,7 +41,7 @@
     },
     {
       "title": "Bring in updated files",
-      "description": "## Creating Pages\n\nSo now lets bring in the files for our application. \n\n>> cp -r /workspace/resources/tour2/* /workspace/astra-tik-tok/src"
+      "description": "## Creating Pages\n\nSo now let's bring in the files for our application. \n\n>> cp -r /workspace/resources/tour2/* /workspace/astra-tik-tok/src"
     },
     {
       "file": "astra-tik-tok/src/App.js",
