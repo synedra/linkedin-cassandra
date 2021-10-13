@@ -42,7 +42,7 @@
           "character": 11
         }
       },
-      "description": "## Add personalization in the MicroCard\n\nBring in a new version of MicroCard that uses the user elements.\n\n>> cp /workspace/resources/MicroCardFinal.js src/components/MicroCard.js"
+      "description": "## Add personalization in the MicroCard\n\nBring in a new version of MicroCard that uses the user elements.\n\n>> cp /workspace/resources/tour6/components/MicroCard.js /workspace/astra-tik-tok/src/components/MicroCard.js"
     },
     {
       "title": "Review edit.js",
