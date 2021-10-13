@@ -10,19 +10,19 @@
 A simple Tik-Tok clone running on Astra DB that leverages the Document API.
 <!--- ENDEXCLUDE --->
 
-![image](./tutorials/images/screenshot.jpg)
+![image](./tutorial/images/screenshot.jpg)
 
 ## Table of content
 
-- [Objectives]()
-- [Frequently asked questions]()
-- [Materials for the Session]()
-- [Hands-on]()
-- [Homework]()
-- [Introduction to JamStack]()
-- [Why this is cool ?]()
-- [Introduction to Netlify]()
-- [Video tutorial with Ania Kubow]()
+- [Objectives](#objectives)
+- [Frequently asked questions](#frequently-asked-questions)
+- [Materials for the Session](#materials-for-the-session)
+- [Hands-on](#hands-on)
+- [Homework](#homework)
+- [Introduction to JamStack](#1-introduction-to-the-jamstack)
+- [Why this is cool ?](#2-why-this-is-cool-)
+- [Introduction to Netlify](#3-introduction-to-netlify)
+- [Video tutorial with Ania Kubow](#video-tutorial-with-ania-kubow)
 
 ## Objectives
 
@@ -48,15 +48,13 @@ It doesn't matter if you join our workshop live or you prefer to do at your own 
 - [Discord chat](https://bit.ly/cassandra-workshop)
 - [Questions and Answers](https://community.datastax.com/)
 
-
-  
 ## Hands-on
 
 - Click the button to launch the GitPod IDE from **YOUR** repository.
 
 * _Supported by <img src="tutorial/images/chrome-logo.svg" height="20"/> Chrome and <img src="tutorial/images/firefox-logo.svg" height="20"/> Firefox_
 
-![Open in Gitpod](https://gitpod.io/#https://github.com/datastaxdevs/workshop-tiktok-codetour)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/datastaxdevs/workshop-tiktok-codetour)
 
 ## Homework
 
