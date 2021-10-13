@@ -134,7 +134,7 @@
     },
     {
       "title": "Check your changes",
-      "description": "## Check your changes\n\nStart the server:\n\nBuild and publish\n\n>> netlify build\n\n>> netlify deploy -p \n\nVisit the home page of your site to make sure things are rendering appropriately.\n\n>> netlify site:open"
+      "description": "## Check your changes\n\nStart the server:\n\nBuild and publish\n\n>> netlify build\n\n>> netlify deploy -p \n\nVisit the home page of your site to make sure things are rendering appropriately.\n\n>> netlify open:site"
     }
   ]
 }
