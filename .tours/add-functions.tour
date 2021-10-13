@@ -14,7 +14,7 @@
           "character": 13
         }
       },
-      "description": "## Add personalization\n\nCopy in a new Card.js to include information about the user.\n\n>> cp /workspace/resources/tour6/* src"
+      "description": "## Add personalization\n\nCopy in a new Card.js to include information about the user.\n\n>> cp -r /workspace/resources/tour6/* src"
     },
     {
       "file": "astra-tik-tok/src/components/MicroCard.js",
