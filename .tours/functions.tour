@@ -22,7 +22,7 @@
     {
       "title": "Import data from data.json",
       "file": "astra-tik-tok/functions/addData.js",
-      "description": "## Start the netlify server\n\n[Run Server](command:workbench.action.tasks.runTask?[\"Run netlify dev\"])\n\n## Call addData.js to populate the database\n\n>> gp preview `env | grep GITPOD_WORKSPACE_URL | cut -f2 -d'=' | sed s#//#//8888-#`/.netlify/functions/addData\n\n## Call post.js to see the contents\n\n>> gp preview `env | grep GITPOD_WORKSPACE_URL | cut -f2 -d'=' | sed s#//#//8888-#`/.netlify/functions/post",
+      "description": "## Start the netlify server\n\nThe 'Run Server' command will starts `netlify dev` in a new terminal for you to use the functions.\n\n[Run Server](command:workbench.action.tasks.runTask?[\"Run netlify dev\"])\n\n## Call addData.js to populate the database\n\n>> gp preview `env | grep GITPOD_WORKSPACE_URL | cut -f2 -d'=' | sed s#//#//8888-#`/.netlify/functions/addData\n\n## Call post.js to see the contents\n\n>> gp preview `env | grep GITPOD_WORKSPACE_URL | cut -f2 -d'=' | sed s#//#//8888-#`/.netlify/functions/post",
       "line": 1
     }
   ]
