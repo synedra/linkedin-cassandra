@@ -134,7 +134,7 @@
     },
     {
       "title": "Check your changes",
-      "description": "## Check your changes\n\nAdd the `utils` folder in the functions:\n\n>>cp -pR /workspace/resources/utils/ /workspace/astra-tik-tok/functions/\n\nNow rebuild the project\n\n>>netlify build\n\nPush your changes\n\n>> git add -A\n\n>> git commit -a -m \"Adding items to hook together.\"\n\nVisit the home page of your site to make sure things are rendering appropriately.\n\n>> netlify open:site\n\n"
+      "description": "## Check your changes\n\nAdd the `utils` folder in the functions:\n\n>> cp -pR /workspace/resources/utils/ /workspace/astra-tik-tok/functions/\n\nNow rebuild the project\n\n>> netlify build\n\nPush your changes\n\n>> git add -A\n\n>> git commit -a -m \"Adding items to hook together.\"\n\nVisit the home page of your site to make sure things are rendering appropriately.\n\n>> netlify open:site\n\n"
     }
   ]
 }
