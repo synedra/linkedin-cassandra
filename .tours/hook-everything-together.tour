@@ -134,7 +134,7 @@
     },
     {
       "title": "Check your changes",
-      "description": "## Check your changes\n\nStart the server:\n\nPush your changes\n\n>> git add -A\n\n>> git commit -a -m \"Adding items to hook together.\"\n\nVisit the home page of your site to make sure things are rendering appropriately.\n\n>> netlify site:open"
+      "description": "## Check your changes\n\nStart the server:\n\nPush your changes\n\n>> git add -A\n\n>> git commit -a -m \"Adding items to hook together.\"\n\nVisit the home page of your site to make sure things are rendering appropriately.\n\n>> netlify site:open\n\nIf the link does not open correctly in the preview, as before click the icon on the right or open in a new window.\n\n"
     }
   ]
 }
