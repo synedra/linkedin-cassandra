@@ -1,7 +1,0 @@
-#!/bin/bash
-
-export SITE=`netlify status | grep "Site URL" | cut -c25-`;
-
-perl -pi -e "s#http://0.0.0.0:8888/#$SITE/#g" ../.tours/*
-perl -pi -e "s#http://localhost:8888/#$SITE/#g" ../.tours/*
-
