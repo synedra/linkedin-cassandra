@@ -12,6 +12,8 @@ RUN set -ex; \
         chromium-chromedriver \
         vim \
         python3 \
+        python3-pip \
+        curl \
         gh
 
 RUN apt-get clean
@@ -25,9 +27,11 @@ RUN chmod 777 /usr/lib/node_modules/astra-setup/node_modules/node-jq/bin/jq
 RUN chown -R gitpod:gitpod /workspace
 
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
-USER gitpo
+USER gitpod
 
 RUN pip3 install httpie-astra
+ENV CQLSH_VERSION 5.0.3
+RUN pip3 install cqlsh==5.0.3
 
 EXPOSE 8888
 EXPOSE 8443
