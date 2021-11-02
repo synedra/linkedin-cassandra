@@ -14,7 +14,6 @@ RUN set -ex; \
         python3 \
         python3-pip \
         curl \
-        cqlsh \
         gh
 
 RUN apt-get clean
