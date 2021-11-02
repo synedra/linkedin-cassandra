@@ -29,6 +29,11 @@ RUN chown -R gitpod:gitpod /workspace
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 USER gitpod
 
+RUN curl https://pyenv.run | bash
+RUN pyenv update
+RUN pyenv install 3.8.12
+RUN pip install cassandra-driver cql six 
+
 RUN pip3 install httpie-astra
 ENV CQLSH_VERSION 5.0.3
 RUN pip3 install cqlsh==5.0.3
