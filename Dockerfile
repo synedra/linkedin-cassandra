@@ -29,7 +29,7 @@ RUN chown -R gitpod:gitpod /workspace
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 USER gitpod
 
-RUN rm /home/gitpod/.pyenv
+RUN rm -rf /home/gitpod/.pyenv
 
 RUN curl https://pyenv.run | bash
 RUN pyenv update
