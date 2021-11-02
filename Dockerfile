@@ -14,6 +14,7 @@ RUN set -ex; \
         python3 \
         python3-pip \
         curl \
+        cqlsh \
         gh
 
 RUN apt-get clean
@@ -36,11 +37,7 @@ RUN rm -rf /home/gitpod/.pyenv
 RUN curl https://pyenv.run | bash
 RUN pyenv update
 RUN pyenv install 3.8.12
-RUN pip install cassandra-driver cql six 
-
-RUN pip3 install httpie-astra
-ENV CQLSH_VERSION 5.0.3
-RUN pip3 install cqlsh==5.0.3
+RUN pip install cassandra-driver cql six httpie-astra cqlsh==5.0.3
 RUN echo 'alias cqlsh="cqlsh --cqlversion ${CQLVERSION} $@"' >> ~/.bashrc
 
 EXPOSE 8888
