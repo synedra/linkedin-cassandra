@@ -32,6 +32,8 @@ USER gitpod
 RUN pip3 install httpie-astra
 ENV CQLSH_VERSION 5.0.3
 RUN pip3 install cqlsh==5.0.3
+RUN echo 'alias cqlsh="cqlsh --cqlversion ${CQLVERSION} $@"' >> ~/.bashrc \
+    && mkdir /.cassandra
 
 EXPOSE 8888
 EXPOSE 8443
