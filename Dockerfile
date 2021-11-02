@@ -24,7 +24,9 @@ RUN npm install -g astra-setup netlify-cli axios
 
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 RUN chmod 777 /usr/lib/node_modules/astra-setup/node_modules/node-jq/bin/jq
+RUN mkdir /.cassandra
 RUN chown -R gitpod:gitpod /workspace
+RUN chown -R gitpod:gitpod /.cassandra
 
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 USER gitpod
@@ -39,8 +41,7 @@ RUN pip install cassandra-driver cql six
 RUN pip3 install httpie-astra
 ENV CQLSH_VERSION 5.0.3
 RUN pip3 install cqlsh==5.0.3
-RUN echo 'alias cqlsh="cqlsh --cqlversion ${CQLVERSION} $@"' >> ~/.bashrc \
-    && mkdir /.cassandra
+RUN echo 'alias cqlsh="cqlsh --cqlversion ${CQLVERSION} $@"' >> ~/.bashrc
 
 EXPOSE 8888
 EXPOSE 8443
