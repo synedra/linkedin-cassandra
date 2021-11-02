@@ -29,6 +29,8 @@ RUN chown -R gitpod:gitpod /workspace
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 USER gitpod
 
+RUN rm /home/gitpod/.pyenv
+
 RUN curl https://pyenv.run | bash
 RUN pyenv update
 RUN pyenv install 3.8.12
