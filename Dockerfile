@@ -20,13 +20,12 @@ RUN apt-get clean
 RUN curl -L https://deb.nodesource.com/setup_16.x | bash \
     && apt-get update -yq \
 	&& apt-get install nodejs
-RUN npm install -g netlify-cli astra-setup axios
+RUN npm install -g netlify-cli axios astra-setup 
 
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 RUN chmod 777 /usr/lib/node_modules/astra-setup/node_modules/node-jq/bin/jq
-RUN mkdir /.cassandra
+RUN mkdir /home/gitpod/.cassandra
 RUN chown -R gitpod:gitpod /workspace
-RUN chown -R gitpod:gitpod /.cassandra
 
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 USER gitpod
