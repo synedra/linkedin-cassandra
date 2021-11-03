@@ -30,14 +30,16 @@ RUN chown -R gitpod:gitpod /home/gitpod/.cassandra
 
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 USER gitpod
+WORKDIR /home/gitpod
 
 RUN rm -rf /home/gitpod/.pyenv
+RUN wget https://downloads.datastax.com/enterprise/cqlsh-astra.tar.gz
 
 RUN curl https://pyenv.run | bash
 RUN pyenv update
 RUN pyenv install 3.8.12
-RUN pip install cassandra-driver cql six httpie-astra cqlsh==5.0.3
-RUN echo 'alias cqlsh="cqlsh --cqlversion ${CQLVERSION} $@"' >> ~/.bashrc
+RUN pip install cassandra-driver cql six httpie-astra 
+RUN echo 'alias cqlsh="/home/gitpod/cqlsh-astra/bin/cqlsh --secure-connect-bundle=/home/gitpod/.cassandra/bootstrap.zip -u $ASTRA_DB_CLIENT_ID -p $ASTRA_DB_CLIENT_SECRET"' >> ~/.bashrc
 
 EXPOSE 8888
 EXPOSE 8443
