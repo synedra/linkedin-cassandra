@@ -33,12 +33,12 @@ WORKDIR /home/gitpod
 
 RUN rm -rf /home/gitpod/.pyenv
 RUN wget https://downloads.datastax.com/enterprise/cqlsh-astra.tar.gz
+RUN tar xzf cqlsh-astra.tar.gz
 
 RUN curl https://pyenv.run | bash
 RUN pyenv update
 RUN pyenv install 3.8.12
 RUN pip install cassandra-driver cql six httpie-astra 
-RUN echo 'alias cqlsh="/home/gitpod/cqlsh-astra/bin/cqlsh --secure-connect-bundle=/home/gitpod/.cassandra/bootstrap.zip -u $ASTRA_DB_CLIENT_ID -p $ASTRA_DB_CLIENT_SECRET"' >> ~/.bashrc
 
 EXPOSE 8888
 EXPOSE 8443

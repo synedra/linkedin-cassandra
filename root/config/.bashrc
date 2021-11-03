@@ -109,6 +109,7 @@ fi
 alias astra-setup="node /usr/lib/node_modules/astra-setup/src/astra-setup"
 alias git-remote="/bin/bash /workspace/resources/git-remote"
 alias netlify-site="/bin/bash /workspace/resources/netlify-site"
+alias cqlsh="/home/gitpod/cqlsh-astra/bin/cqlsh --secure-connect-bundle=/home/gitpod/.cassandra/bootstrap.zip -u $ASTRA_DB_CLIENT_ID -p $ASTRA_DB_CLIENT_SECRET"
 
 
 
