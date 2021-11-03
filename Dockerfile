@@ -26,6 +26,8 @@ RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/
 RUN chmod 777 /usr/lib/node_modules/astra-setup/node_modules/node-jq/bin/jq
 RUN mkdir /home/gitpod/.cassandra
 RUN chown -R gitpod:gitpod /workspace
+RUN chown -R gitpod:gitpod /home/gitpod/.cassandra
+
 
 COPY --chown=gitpod:gitpod /root/config/.bashrc /home/gitpod/.bashrc.d/999-datastax
 USER gitpod
