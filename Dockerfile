@@ -20,7 +20,7 @@ RUN apt-get clean
 RUN curl -L https://deb.nodesource.com/setup_16.x | bash \
     && apt-get update -yq \
 	&& apt-get install nodejs
-RUN npm install -g netlify-cli axios astra-setup 
+RUN npm install -g netlify-cli astra-setup axios 
 
 RUN sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 RUN chmod 777 /usr/lib/node_modules/astra-setup/node_modules/node-jq/bin/jq
