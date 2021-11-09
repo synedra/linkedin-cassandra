@@ -1,0 +1,14 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3. Adding Data to Cassandra",
+  "steps": [
+    {
+      "title": "Add new data",
+      "description": "## Adding rows in Cassandra\n\nLet's add some cavemen to our tables, and retrieve the information with queries.\n\nWe'll add Fred, Barney, Wilma and Betty so we have a few things to look at.\n\n### Insert Data\n\nLet's add a couple of entries to the table.\n\nWhat do we need for this data?  We need the caveman's first name and last name.\n\n>> INSERT INTO linkedin.cavemen (lastname, firstname) VALUES ('Flintstone','Fred');\n\n>> INSERT INTO linkedin.cavemen (lastname, firstname) VALUES ('Flintstone','Wilma');\n\n>> INSERT INTO linkedin.cavemen (lastname, firstname) VALUES ('Rubble','Barney');\n\n>> INSERT INTO linkedin.cavemen (lastname, firstname) VALUES ('Rubble','Betty');\n\n\n"
+    },
+    {
+      "title": "Retrieve Rows",
+      "description": "## Retrieving\n\nWe have some cavemen in the table, now let's see how we can retrieve specific data.\n\n### Insert Data\n\nLet's add a couple of entries to the table.\n\n\n>> SELECT * FROM linkedin.cavemen WHERE lastname = 'Flintstone';\n"
+    }
+  ]
+}
