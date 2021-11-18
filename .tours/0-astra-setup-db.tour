@@ -1,7 +1,7 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
   "title": "1. Astra Getting Started",
-  "nextTour": "2. Start Building a React app",
+  "nextTour": "2. Creating Keyspaces and Tables",
   "steps": [
     {
       "title": "Authentication",
